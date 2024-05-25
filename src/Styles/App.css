@@ -1,0 +1,113 @@
+:root {
+  --orange: rgb(223, 105, 81);
+  --backgroundEffect: rgba(189, 35, 63, 0.5);
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-size: 1.6rem;
+}
+/*
+Headr
+
+*/
+header {
+  background: linear-gradient(rgba(59, 55, 53, 0.5), var(--backgroundEffect)),
+    url("../Assest/ReaPics/CryptoPerson.png");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+/*
+
+ * - - - -
+*/
+.Menu {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.Logo {
+  width: 7rem;
+  height: 5rem;
+}
+.Logo__Img {
+  width: 100%;
+  height: 100%;
+}
+.Menu__Desktop {
+}
+.DesktopMenuList {
+  display: none;
+}
+.DesktopMenu__item {
+}
+.menuitem__link {
+}
+.Menu__Mobile {
+}
+.MobileMenuList {
+  display: none;
+}
+.MobileMenu__item {
+}
+.menuitem__link {
+}
+.MobileMenu__Links {
+  display: none;
+}
+.MobileMenu__Link {
+}
+.MobileMenu__Link--Border {
+}
+.DesktopMenu__Links {
+  display: none;
+}
+.Menu__Link {
+}
+.Language {
+  display: none;
+}
+.Menu__MobileHamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 3rem;
+}
+.hamgurgerLine {
+  display: block;
+  width: 3rem;
+  height: 0.32rem;
+  border-radius: 5rem;
+  background-color: var(--orange);
+  position: relative;
+}
+.hamgurgerLine::after,
+.hamgurgerLine::before {
+  content: " ";
+  width: 3rem;
+  height: 0.32rem;
+  border-radius: 5rem;
+  background-color: var(--orange);
+  position: absolute;
+}
+.hamgurgerLine::after {
+  top: -0.8rem;
+}
+.hamgurgerLine::before {
+  top: 0.8rem;
+}

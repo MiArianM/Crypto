@@ -1,7 +1,12 @@
+import WebFooter from "./Components/WebFooter";
+import WebHeader from "./Components/WebHeader";
+import WebMain from "./Components/WebMain";
 function App() {
   return (
     <>
-      <h1>Crypto App | Mim</h1>
+      <WebHeader />
+      <WebMain />
+      <WebFooter />
     </>
   );
 }
