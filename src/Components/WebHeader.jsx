@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { TypeAnimation } from "react-type-animation";
 import axios from "axios";
 // eslint-disable-next-line no-unused-vars
 import i18n from "./Translation/i18n";
@@ -13,6 +14,32 @@ function WebHeader() {
   const [manualCountry, setManualCountry] = useState("");
   const [extrasidebar, setExtraSidebar] = useState(false);
   const { t, i18n } = useTranslation();
+  const sequence = [
+    t("We empower visionaries with determination"),
+    1000,
+    t("We empower visionaries with resilience"),
+    1000,
+    t("We empower visionaries with creativity"),
+    1000,
+    t("We empower visionaries with leadership"),
+    1000,
+    t("We empower visionaries with integrity"),
+    1000,
+    t("We empower visionaries with innovation"),
+    1000,
+    t("We empower visionaries with compassion"),
+    1000,
+    t("We empower visionaries with adaptability"),
+    1000,
+    t("We empower visionaries with wisdom"),
+    1000,
+    t("We empower visionaries with courage"),
+    1000,
+    t("It's Not We : ) It's Me !"),
+    1000,
+    t("It's -Mim"),
+    5000,
+  ];
   const OpenMobileMenu = () => {
     setOpened((opened) => !opened);
   };
@@ -262,6 +289,62 @@ function WebHeader() {
             <span className="hamburgerLine"></span>
           </div>
         </nav>
+        <div className="HomeDescription">
+          <h2 className="HomeDescription__Title">
+            {t("Trade on the go | Anywhere, anytime.")}
+          </h2>
+          <p className="HomeDescription__Description">
+            {t("Your crypto journey starts here !")}
+          </p>
+          <div className="TypingStories1">
+            <TypeAnimation
+              sequence={[
+                t("We empower visionaries with determination"),
+                1000,
+                t("We empower visionaries with resilience"),
+                1000,
+                t("We empower visionaries with creativity"),
+                1000,
+                t("We empower visionaries with leadership"),
+                1000,
+                t("We empower visionaries with integrity"),
+                1000,
+                t("We empower visionaries with innovation"),
+                1000,
+                t("We empower visionaries with compassion"),
+                1000,
+                t("We empower visionaries with adaptability"),
+                1000,
+                t("We empower visionaries with wisdom"),
+                1000,
+                t("We empower visionaries with courage"),
+                1000,
+                t("It's Not We : ) It's Me !"),
+                1000,
+                t("It's -Mim"),
+                5000,
+              ]}
+              speed={45}
+              style={{ fontSize: "2.15rem" }}
+              repeat={Infinity}
+            />
+          </div>
+          <div className="LinkANDVideo">
+            <a className="HomeDescription__Link" href="">
+              {t("Find Out More")}
+            </a>
+            <div className="HomeDescription__Video">
+              <img
+                className="HomeDescriptionVideo__Play"
+                src="./src/Assest/Images/PlayButton.svg"
+                alt="Play Button"
+              />
+              <span className="HomeDescription__Playtitle">
+                {t("Play Demo")}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );

@@ -14,7 +14,7 @@
   src: url("../../src/fonts/Poppins/Poppins-Bold.ttf") format(truetype);
 }
 @font-face {
-  font-family: "Poppins";
+  font-family: "PoppinsMedium";
   font-weight: 500;
   src: url("../../src/fonts/Poppins/Poppins-Medium.ttf") format(truetype);
 }

@@ -14,15 +14,15 @@ header {
     url("../Assest/ReaPics/CryptoPerson.png");
   background-position: center;
   background-size: cover;
-  min-height: 55rem;
-  border-bottom-left-radius: 6rem;
-  border-bottom-right-radius: 14rem;
+  min-height: 99vh;
+  border-bottom-left-radius: 16rem;
+  border-bottom-right-radius: 16rem;
 }
 
 /*
-  ==================
+  ================== ================
     Nav Menu Bar
-  ==================
+  ================== ================
 */
 .Menu {
   padding: 1rem;
@@ -133,9 +133,10 @@ header {
   left: -20rem;
   bottom: 0;
   padding: 1rem;
-  transition: 1s all;
+  transition: 0.5s all;
 }
 .Menu__Mobile--Opened {
+  z-index: 10000;
   left: 0;
 }
 .MobileMenuList {
@@ -143,7 +144,7 @@ header {
   margin-bottom: 2rem;
 }
 .MobileMenu__item {
-  margin: 4rem;
+  margin: 2.25rem;
 }
 .MobileMenu__Links {
   display: flex;
@@ -295,4 +296,92 @@ header {
   max-width: 300px;
   background-color: #fff;
   cursor: pointer;
+}
+/*
+  ================== ================
+    Home Header Section
+  ================== ================
+*/
+.HomeDescription {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(
+    rgba(252, 226, 243, 0.959),
+    rgba(80, 143, 138, 0.39)
+  );
+  border-bottom-right-radius: 6.75rem;
+  border-bottom-left-radius: 6.75rem;
+}
+
+.HomeDescription__Title {
+  font-family: "Volkhov";
+  color: #181e4b;
+  letter-spacing: 0.1rem;
+  line-height: 1.25;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10rem;
+}
+.HomeDescription__Description {
+  font-family: "PoppinsMedium";
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  color: #5e6282;
+  z-index: 1;
+  position: relative;
+}
+.HomeDescription__Description::before {
+  content: "";
+  width: 37rem;
+  height: 1.5rem !important;
+  display: block;
+  background: url("../Assest/Images/BackOfText.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: -0.5rem;
+  top: 0.5rem;
+  z-index: -1;
+}
+.TypingStories1{
+  align-self: flex-start;
+  font-size:2rem; 
+  margin: 10px 50px; 
+  letter-spacing: 0.1rem; 
+}
+.LinkANDVideo {
+  display: flex;
+  align-items: center;
+}
+.HomeDescription__Link {
+  background-color: #cabe0c;
+  border-radius: 1rem;
+  height: fit-content;
+  padding: 1rem;
+  color: white;
+  font-family: "Open Medium";
+  margin-top: -3rem;
+  transition: 0.25s all;
+}
+.HomeDescription__Link:hover {
+  background-color: #d6c90d;
+}
+.HomeDescription__Video {
+  display: flex;
+  align-items: center;
+}
+.HomeDescriptionVideo__Play {
+}
+.HomeDescription__Playtitle {
+  font-family: "PoppinsMedium";
+  margin-left: -8.5rem;
+  margin-top: -3rem;
+  color: #686d77;
+  cursor: pointer;
+  transition: 0.25s all;
+}
+.HomeDescription__Playtitle:hover {
+  color: #3a3d42;
 }
