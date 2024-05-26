@@ -12,12 +12,22 @@ function WebHeader() {
   const [flagUrl, setFlagUrl] = useState(null);
   const [manualCountry, setManualCountry] = useState("");
   const [extrasidebar, setExtraSidebar] = useState(false);
+  const { t, i18n } = useTranslation();
   const OpenMobileMenu = () => {
     setOpened((opened) => !opened);
   };
-  const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+  };
+  const handleManualCountryChange = (e) => {
+    setManualCountry(e.target.value);
+    setLocation({ country: e.target.value });
+  };
+  const AtivatingSideBar = () => {
+    setExtraSidebar(true);
+  };
+  const DeAtivatingSideBar = () => {
+    setExtraSidebar(false);
   };
   useEffect(() => {
     const fetchIp = async () => {
@@ -45,7 +55,7 @@ function WebHeader() {
     };
 
     fetchLocation();
-  }, [ip]); // Only depend on `ip`
+  }, [ip]);
 
   useEffect(() => {
     const fetchFlag = async () => {
@@ -64,16 +74,7 @@ function WebHeader() {
 
     fetchFlag();
   }, [location, manualCountry]);
-  const handleManualCountryChange = (e) => {
-    setManualCountry(e.target.value);
-    setLocation({ country: e.target.value });
-  };
-  const AtivatingSideBar = () => {
-    setExtraSidebar(true);
-  };
-  const DeAtivatingSideBar = () => {
-    setExtraSidebar(false);
-  };
+
   return (
     <header>
       <div className="container">
@@ -118,24 +119,29 @@ function WebHeader() {
             )}
             <div className="Menu__Desktop">
               <ul className="DesktopMenuList">
-                <li className="DesktopMenu__item">
+                <li className="DesktopMenu__item DesktopMenu__item--NowOn">
                   <a href="" className="menuitem__link">
-                    Prices
+                    {t("Home")}{" "}
                   </a>
                 </li>
                 <li className="DesktopMenu__item">
                   <a href="" className="menuitem__link">
-                    Products
+                    {t("Prices")}{" "}
                   </a>
                 </li>
                 <li className="DesktopMenu__item">
                   <a href="" className="menuitem__link">
-                    Company
+                    {t("Products")}
                   </a>
                 </li>
                 <li className="DesktopMenu__item">
                   <a href="" className="menuitem__link">
-                    Learn
+                    {t("Company")}{" "}
+                  </a>
+                </li>
+                <li className="DesktopMenu__item">
+                  <a href="" className="menuitem__link">
+                    {t("Learn")}{" "}
                   </a>
                 </li>
               </ul>
@@ -168,6 +174,11 @@ function WebHeader() {
               </optgroup>
             </select>
             <ul className="MobileMenuList">
+              <li className="MobileMenu__item">
+                <a href="" className="menuitem__link">
+                  {t("Home")}{" "}
+                </a>
+              </li>
               <li className="MobileMenu__item">
                 <a href="" className="menuitem__link">
                   {t("Prices")}{" "}
@@ -235,10 +246,10 @@ function WebHeader() {
 
           <div className="DesktopMenu__Links">
             <a href="" className="Menu__Link">
-              Login
+              {t("Login")}
             </a>
             <a href="" className="Menu__Link Menu__Link--Border">
-              Sign Up
+              {t("Sign Up")}
             </a>
           </div>
 

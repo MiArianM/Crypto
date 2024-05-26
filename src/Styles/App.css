@@ -6,25 +6,6 @@
   --backgroundMenuEffect2: rgb(255, 241, 218);
   --MenuTextColor: rgb(33, 40, 50);
 }
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-*,
-*:after,
-*:before {
-  box-sizing: inherit;
-}
-a {
-  text-decoration: none;
-}
-body {
-  font-size: 1.6rem;
-}
-/*
-Headr
-
-*/
 header {
   background: linear-gradient(
       var(--backgroundImageEffect),
@@ -39,8 +20,9 @@ header {
 }
 
 /*
-
- * - - - -
+  ==================
+    Nav Menu Bar
+  ==================
 */
 .Menu {
   padding: 1rem;
@@ -79,8 +61,42 @@ header {
   width: 100%;
   height: 100%;
 }
+/*
+  ==================
+    Nav Menu Bar on Desktop
+  ==================
+*/
 .Menu__Desktop {
   display: none;
+}
+.DesktopMenuList {
+  display: flex;
+}
+.DesktopMenu__item {
+  margin: 1rem;
+}
+.DesktopMenu__item.DesktopMenu__item--NowOn {
+  position: relative;
+}
+.DesktopMenu__item.DesktopMenu__item--NowOn::before {
+  background-color: var(--orange);
+  content: "";
+  width: 85%;
+  left: 0;
+  top: 2.3rem;
+  right: 0;
+  margin: 0 auto;
+  height: 0.2rem;
+  display: block;
+  position: absolute;
+}
+.menuitem__link {
+  font-family: "Open Medium";
+  color: #d2d2d2 !important;
+  transition: 0.25s all;
+}
+.menuitem__link:hover {
+  color: var(--orange) !important;
 }
 .Menu__Desktop > select {
   margin-left: 3rem;
@@ -92,6 +108,7 @@ header {
   transition: 0.85s all;
   cursor: pointer;
 }
+
 .Menu__Desktop > select:hover {
   background-color: rgba(131, 129, 1, 0.459);
 }
@@ -99,21 +116,11 @@ header {
   border: none;
   background-color: rgba(177, 116, 2, 0.747);
 }
-
-.DesktopMenuList {
-  display: flex;
-}
-.DesktopMenu__item {
-  margin: 1rem;
-}
-.menuitem__link {
-  font-family: "Open Medium";
-  color: #d2d2d2 !important;
-  transition: 0.75s all;
-}
-.menuitem__link:hover {
-  color: var(--orange) !important;
-}
+/*
+  ==================
+    Nav Menu Bar on Mobile
+  ==================
+*/
 .Menu__Mobile {
   width: 20rem;
   height: 100vh;
@@ -138,11 +145,6 @@ header {
 .MobileMenu__item {
   margin: 4rem;
 }
-.menuitem__link {
-  color: var(--MenuTextColor);
-  font-family: "Open Medium";
-  font-size: 2rem;
-}
 .MobileMenu__Links {
   display: flex;
   font-family: "Open Medium";
@@ -163,6 +165,11 @@ header {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 1rem;
 }
+.menuitem__link {
+  color: var(--MenuTextColor);
+  font-family: "Open Medium";
+  font-size: 2rem;
+}
 .DesktopMenu__Links {
   display: none;
 }
@@ -176,13 +183,13 @@ header {
 }
 .Menu__Link:hover {
   color: var(--orange);
-  transition: 0.75s all;
+  transition: 0.25s all;
 }
 .Menu__Link.Menu__Link--Border {
   border: 2px solid #fff;
   padding: 1rem 2rem;
   border-radius: 10rem;
-  transition: 0.75s all;
+  transition: 0.25s all;
 }
 .Menu__Link.Menu__Link--Border:hover {
   border: 2px solid #cabe0c;
@@ -203,6 +210,11 @@ header {
 .DesktopLanguage {
   width: 5rem;
 }
+/*
+  ==================
+    Hamburger Menu on Mobile
+  ==================
+*/
 .Menu__MobileHamburger {
   display: flex;
   justify-content: center;
@@ -248,6 +260,11 @@ header {
   transform: rotate(35deg) translateY(9px);
   width: 3.85rem;
 }
+/*
+  ==================
+    Geo Info Elements
+  ==================
+*/
 .GeoInfo {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
