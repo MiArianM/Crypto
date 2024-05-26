@@ -1,6 +1,10 @@
 :root {
   --orange: rgb(223, 105, 81);
-  --backgroundEffect: rgba(189, 35, 63, 0.5);
+  --backgroundHomeEffect: rgba(189, 35, 63, 0.5);
+  --backgroundImageEffect: rgba(59, 55, 53, 0.5);
+  --backgroundImageEffect1: rgb(223, 105, 81);
+  --backgroundMenuEffect2: rgb(255, 241, 218);
+  --MenuTextColor: rgb(33, 40, 50);
 }
 html {
   box-sizing: border-box;
@@ -22,11 +26,14 @@ Headr
 
 */
 header {
-  background: linear-gradient(rgba(59, 55, 53, 0.5), var(--backgroundEffect)),
+  background: linear-gradient(
+      var(--backgroundImageEffect),
+      var(--backgroundHomeEffect)
+    ),
     url("../Assest/ReaPics/CryptoPerson.png");
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 55rem;
 }
 
 /*
@@ -34,7 +41,7 @@ header {
  * - - - -
 */
 .Menu {
-  padding: 10px;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
 }
@@ -56,20 +63,52 @@ header {
 .menuitem__link {
 }
 .Menu__Mobile {
+  width: 20rem;
+  height: 100vh;
+  position: fixed;
+  background: linear-gradient(
+    var(--backgroundImageEffect1),
+    var(--backgroundMenuEffect2)
+  );
+  top: 0;
+  left: -20rem;
+  bottom: 0;
+  padding: 1rem;
+  transition: 1s all;
+}
+.Menu__Mobile--Opened {
+  left: 0;
 }
 .MobileMenuList {
-  display: none;
+  border-bottom: 1px solid white;
+  margin-bottom: 2rem;
 }
 .MobileMenu__item {
+  margin: 4rem;
 }
 .menuitem__link {
+  color: var(--MenuTextColor);
+  font-family: "Open Sans";
+  font-size: 2rem;
 }
 .MobileMenu__Links {
-  display: none;
+  display: flex;
+  font-family: "Open Sans";
 }
 .MobileMenu__Link {
+  border: 1px solid rgb(112, 112, 112);
+  flex-grow: 1;
+  text-align: center;
+  padding: 0.75rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  color: var(--MenuTextColor);
 }
 .MobileMenu__Link--Border {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 1rem;
 }
 .DesktopMenu__Links {
   display: none;
@@ -77,8 +116,19 @@ header {
 .Menu__Link {
 }
 .Language {
-  display: none;
+  color: rgb(226, 224, 235);
+  width: 12rem;
+  padding: 0.5rem;
+  border: none;
+  border-right: 4px solid rgb(223, 85, 31);
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 0.4em;
+  border-bottom-left-radius: 0.4rem;
+  background-color: rgba(199, 0, 66, 0.432);
+  font-family: "open sans";
 }
+
 .Menu__MobileHamburger {
   display: flex;
   justify-content: center;
@@ -86,28 +136,72 @@ header {
   background-color: #fff;
   width: 5rem;
   height: 5rem;
-  border-radius: 3rem;
+  border-radius: 2rem;
 }
-.hamgurgerLine {
+.hamburgerLine {
   display: block;
   width: 3rem;
   height: 0.32rem;
   border-radius: 5rem;
   background-color: var(--orange);
   position: relative;
+  transition: 250ms all;
 }
-.hamgurgerLine::after,
-.hamgurgerLine::before {
+.hamburgerLine::after,
+.hamburgerLine::before {
   content: " ";
   width: 3rem;
   height: 0.32rem;
   border-radius: 5rem;
   background-color: var(--orange);
   position: absolute;
+  transition: 450ms all;
 }
-.hamgurgerLine::after {
+.hamburgerLine::after {
   top: -0.8rem;
 }
-.hamgurgerLine::before {
+.hamburgerLine::before {
   top: 0.8rem;
+}
+.Menu__MobileHamburger--Opened > .hamburgerLine {
+  background-color: transparent;
+}
+.Menu__MobileHamburger--Opened > .hamburgerLine::before {
+  transform: rotate(-35deg) translateY(-9px);
+  width: 3.85rem;
+}
+.Menu__MobileHamburger--Opened > .hamburgerLine::after {
+  transform: rotate(35deg) translateY(9px);
+  width: 3.85rem;
+}
+.GeoInfo {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.Nationality {
+  width: 1.5rem;
+  margin-right: 1rem;
+}
+.GeoInfo__Text {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+}
+.GeoInfo__Items {
+  font-size: 1.5rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.manual-country {
+  padding: 10px;
+  font-size: 1.3rem;
+  text-align: right;
+  border: 1px solid #dbc2d7;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px; 
+  background-color: #fff;
+  cursor: pointer;
 }
