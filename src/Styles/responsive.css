@@ -1,0 +1,38 @@
+@media (min-width: 768px) {
+  .Menu__MobileHamburger {
+    display: none;
+  }
+  .Menu__Desktop {
+    display: flex;
+    justify-content: center;
+  }
+
+  .DesktopMenu__Links {
+    display: block;
+  }
+  header {
+    background: linear-gradient(rgba(59, 55, 53, 0.6), #bd542380),
+      url(../Assest/ReaPics/TradeGuy.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  .ExtraInfos {
+    display: block;
+    top: 5rem;
+  }
+  .DesktopMenu__Links {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .DesktopMenu__Links {
+    display: block;
+  }
+  .ExtraInfos {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 1400px) {
+}

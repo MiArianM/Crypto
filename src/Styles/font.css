@@ -1,12 +1,10 @@
 @font-face {
-  font-family: "Open Sans";
-  font-weight: 500;
+  font-family: "Open Medium";
   src: url("../../src/fonts/Open_Sans/static/OpenSans-Medium.ttf")
     format(truetype);
 }
 @font-face {
-  font-family: "Open Sans";
-  font-weight: 600;
+  font-family: "Open SemiBold";
   src: url("../../src/fonts/Open_Sans/static/OpenSans-SemiBold.ttf")
     format(truetype);
 }

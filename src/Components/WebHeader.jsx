@@ -11,6 +11,7 @@ function WebHeader() {
   const [location, setLocation] = useState(null);
   const [flagUrl, setFlagUrl] = useState(null);
   const [manualCountry, setManualCountry] = useState("");
+  const [extrasidebar, setExtraSidebar] = useState(false);
   const OpenMobileMenu = () => {
     setOpened((opened) => !opened);
   };
@@ -67,41 +68,91 @@ function WebHeader() {
     setManualCountry(e.target.value);
     setLocation({ country: e.target.value });
   };
+  const AtivatingSideBar = () => {
+    setExtraSidebar(true);
+  };
+  const DeAtivatingSideBar = () => {
+    setExtraSidebar(false);
+  };
   return (
     <header>
       <div className="container">
         <nav className="Menu">
-          <a href="https://github.com/MiArianM" className="Logo">
-            <img
-              src="./src/Assest/Logo.png"
-              alt="Mim Crypto Web"
-              className="Logo__Img"
-            />
-          </a>
-          <div className="Menu__Desktop">
-            <ul className="DesktopMenuList">
-              <li className="DesktopMenu__item">
-                <a href="" className="menuitem__link">
-                  Prices
-                </a>
-              </li>
-              <li className="DesktopMenu__item">
-                <a href="" className="menuitem__link">
-                  Products
-                </a>
-              </li>
-              <li className="DesktopMenu__item">
-                <a href="" className="menuitem__link">
-                  Company
-                </a>
-              </li>
-              <li className="DesktopMenu__item">
-                <a href="" className="menuitem__link">
-                  Learn
-                </a>
-              </li>
-            </ul>
+          <div onMouseLeave={DeAtivatingSideBar} className="ExtraInfos">
+            <h4 className="sidebarButton" onMouseEnter={AtivatingSideBar}>
+              ➲
+            </h4>
+            <div
+              className={`ExtraInfos__Links ${
+                extrasidebar && "ExtraInfos__Links--Activated"
+              }`}
+            >
+              <a href="" className="Menu__Link Menu__Link--smaller">
+                Login
+              </a>
+              <a
+                href=""
+                className="Menu__Link Menu__Link--Border Menu__Link--smaller"
+              >
+                Sign Up
+              </a>
+            </div>
           </div>
+          <div className="Menu__wrapper">
+            <a href="https://github.com/MiArianM" className="Logo">
+              <img
+                src="./src/Assest/Logo.png"
+                alt="Mim Crypto Web"
+                className="Logo__Img"
+              />
+            </a>
+
+            {location ? (
+              <div className="GeoInfo">
+                <span className="GeoInfo__Items">
+                  <img className="Nationality" src={flagUrl} />
+                </span>
+              </div>
+            ) : (
+              <img className="Nationality" src="./public/MahFlag.png" />
+            )}
+            <div className="Menu__Desktop">
+              <ul className="DesktopMenuList">
+                <li className="DesktopMenu__item">
+                  <a href="" className="menuitem__link">
+                    Prices
+                  </a>
+                </li>
+                <li className="DesktopMenu__item">
+                  <a href="" className="menuitem__link">
+                    Products
+                  </a>
+                </li>
+                <li className="DesktopMenu__item">
+                  <a href="" className="menuitem__link">
+                    Company
+                  </a>
+                </li>
+                <li className="DesktopMenu__item">
+                  <a href="" className="menuitem__link">
+                    Learn
+                  </a>
+                </li>
+              </ul>
+              <select
+                onChange={(e) => changeLanguage(e.target.value)}
+                className="DesktopLanguage"
+              >
+                <option disabled value="en">
+                  Choose Between{" "}
+                </option>
+                <option value="en">EN</option>
+                <option value="fa">FA</option>
+                <option value="de">DE</option>
+              </select>
+            </div>
+          </div>
+
           <div className={`Menu__Mobile ${opened && "Menu__Mobile--Opened"}`}>
             <select
               onChange={(e) => changeLanguage(e.target.value)}
@@ -181,11 +232,12 @@ function WebHeader() {
               </div>
             )}
           </div>
+
           <div className="DesktopMenu__Links">
             <a href="" className="Menu__Link">
               Login
             </a>
-            <a href="" className="Menu__Link--Border">
+            <a href="" className="Menu__Link Menu__Link--Border">
               Sign Up
             </a>
           </div>
