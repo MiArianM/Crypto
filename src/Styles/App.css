@@ -18,6 +18,51 @@ header {
   border-bottom-left-radius: 16rem;
   border-bottom-right-radius: 16rem;
 }
+body.fa-language {
+  direction: rtl;
+  .menuitem__link {
+    font-family: "DastNevis";
+  }
+  .HomeDescription__Title {
+    font-family: "Koodak";
+  }
+  .HomeDescription__Description {
+    font-family: "Koodak";
+  }
+  .index-module_type__E-SaG {
+    font-family: "Dirooz";
+  }
+  .HomeDescription__Video {
+    flex-direction: row-reverse;
+  }
+  .LinkANDVideo {
+    flex-direction: row-reverse;
+  }
+  .Nationality {
+    margin-right: 0;
+  }
+  .Menu__Desktop > select {
+    margin-right: 1.5rem;
+    margin-left: 0;
+  }
+  .HomeDescription__Playtitle,
+  .HomeDescription__Link {
+    font-family: "DastNevis";
+  }
+  .HomeDescription__Description::before {
+    left: 7.5rem;
+  }
+  .Menu__Mobile {
+    left: 0;
+    right: -20rem;
+  }
+  .Menu__Mobile--Opened {
+    right: 0;
+  }
+  .hamburgerLine {
+    width: 4.5rem;
+  }
+}
 
 /*
   ================== ================
@@ -345,11 +390,11 @@ header {
   top: 0.5rem;
   z-index: -1;
 }
-.TypingStories1{
-  align-self: flex-start;
-  font-size:2rem; 
-  margin: 10px 50px; 
-  letter-spacing: 0.1rem; 
+.TypingStories1 {
+  margin: 30px;
+  letter-spacing: 0.1rem;
+  font-family: "Poetsen";
+  font-size: 1.25rem;
 }
 .LinkANDVideo {
   display: flex;
@@ -364,6 +409,7 @@ header {
   font-family: "Open Medium";
   margin-top: -3rem;
   transition: 0.25s all;
+  font-size: 3rem;
 }
 .HomeDescription__Link:hover {
   background-color: #d6c90d;
@@ -376,6 +422,7 @@ header {
 }
 .HomeDescription__Playtitle {
   font-family: "PoppinsMedium";
+  font-size: 3rem;
   margin-left: -8.5rem;
   margin-top: -3rem;
   color: #686d77;

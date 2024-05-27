@@ -23,6 +23,9 @@
   .DesktopMenu__Links {
     display: none;
   }
+  .TypingStories1 {
+    font-size: 2.25rem;
+  }
 }
 @media (min-width: 992px) {
   .DesktopMenu__Links {
@@ -31,8 +34,17 @@
   .ExtraInfos {
     display: none;
   }
+  .TypingStories1 {
+    font-size: 2.75rem;
+  }
 }
 @media (min-width: 1200px) {
+  .TypingStories1 {
+    font-size: 3.75rem;
+  }
 }
 @media (min-width: 1400px) {
+  .TypingStories1 {
+    font-size: 4.75rem;
+  }
 }
