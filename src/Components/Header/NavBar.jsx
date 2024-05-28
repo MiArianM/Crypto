@@ -44,7 +44,7 @@ const NavBar = () => {
         </div>
       </div>
       <div className="Menu__wrapper">
-        <a href="https://github.com/MiArianM" className="Logo">
+        <a href="https://github.com/MiArianM" className="Logo" target="_blank">
           <img
             src="./src/Assest/Logo.png"
             alt="Mim Crypto Web"

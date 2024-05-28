@@ -8,6 +8,12 @@ const MenuLinks = ({ isMobile }) => {
   const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
   const [isvisible, setIsVisible] = useState(true);
+  const HoverMenuItem = (e) => {
+    e.target.classList.add("HoveredMenuItem");
+  };
+  const UnHoverMenuItem = (e) => {
+    e.target.classList.remove("HoveredMenuItem");
+  };
   const handleManualCountryChange = (e) => {
     dispatch({ type: "SET_MANUAL_COUNTRY", payload: e.target.value });
     dispatch({ type: "SET_LOCATION", payload: { country: e.target.value } });
@@ -29,7 +35,12 @@ const MenuLinks = ({ isMobile }) => {
             className={isMobile ? "MobileMenu__item" : "DesktopMenu__item"}
             key={index}
           >
-            <a href={link.href} className="menuitem__link">
+            <a
+              onMouseEnter={HoverMenuItem}
+              onMouseLeave={UnHoverMenuItem}
+              href={link.href}
+              className="menuitem__link"
+            >
               {link.text}
             </a>
           </li>

@@ -1,4 +1,15 @@
+@media(min-width:410px){
+  .HomeDescription__Playtitle{
+    padding-right: 1rem;
+  }
+  .HomeDescription{
+    width: 100%;
+  }
+}
 @media (min-width: 768px) {
+  .Menu__Mobile {
+    display: none;
+  }
   .Menu__MobileHamburger {
     display: none;
   }
@@ -6,7 +17,17 @@
     display: flex;
     justify-content: center;
   }
-
+  .menuitem__link {
+    display: block;
+  }
+  .menuitem__link::before {
+    position: absolute;
+    top: 2.5rem;
+    left: 15%;
+  }
+  .HoveredMenuItem.menuitem__link::before {
+    width: 70%;
+  }
   .DesktopMenu__Links {
     display: block;
   }
@@ -25,6 +46,9 @@
   }
   .TypingStories1 {
     font-size: 2.25rem;
+  }
+  .HomeDescription__Playtitle {
+    font-size: 3rem;
   }
 }
 @media (min-width: 992px) {

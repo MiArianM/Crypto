@@ -5,6 +5,8 @@
   --backgroundImageEffect1: rgb(223, 105, 81);
   --backgroundMenuEffect2: rgb(255, 241, 218);
   --MenuTextColor: rgb(33, 40, 50);
+  --accent: #0094ff;
+  --main: #ffffff;
 }
 header {
   background: linear-gradient(
@@ -15,8 +17,8 @@ header {
   background-position: center;
   background-size: cover;
   min-height: 99vh;
-  border-bottom-left-radius: 16rem;
-  border-bottom-right-radius: 16rem;
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
 }
 body.fa-language {
   direction: rtl;
@@ -61,6 +63,13 @@ body.fa-language {
   }
   .hamburgerLine {
     width: 4.5rem;
+  }
+  .ReactModalPortal {
+    direction: ltr;
+  }
+  .DemoDescription {
+    font-family: "Dirooz";
+    direction: rtl;
   }
 }
 
@@ -168,7 +177,6 @@ body.fa-language {
 */
 .Menu__Mobile {
   width: 20rem;
-  height: 100vh;
   position: fixed;
   background: linear-gradient(
     var(--backgroundImageEffect1),
@@ -215,6 +223,24 @@ body.fa-language {
   color: var(--MenuTextColor);
   font-family: "Open Medium";
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+.menuitem__link::before {
+  transition: 0.5s all;
+  display: block;
+  width: 0rem;
+  height: 7.35%;
+  background-color: rgb(197, 197, 197);
+  content: " ";
+  left: -0.5rem;
+}
+.HoveredMenuItem.menuitem__link::before {
+  width: 2.35rem;
 }
 .DesktopMenu__Links {
   display: none;
@@ -352,6 +378,7 @@ body.fa-language {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: fit-content;
   background: radial-gradient(
     rgba(252, 226, 243, 0.959),
     rgba(80, 143, 138, 0.39)
@@ -390,6 +417,7 @@ body.fa-language {
   top: 0.5rem;
   z-index: -1;
 }
+
 .TypingStories1 {
   margin: 30px;
   letter-spacing: 0.1rem;
@@ -409,7 +437,7 @@ body.fa-language {
   font-family: "Open Medium";
   margin-top: -3rem;
   transition: 0.25s all;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .HomeDescription__Link:hover {
   background-color: #d6c90d;
@@ -417,18 +445,272 @@ body.fa-language {
 .HomeDescription__Video {
   display: flex;
   align-items: center;
+  margin-right: -1.25rem;
 }
 .HomeDescriptionVideo__Play {
+  z-index: 0;
+  width: 25rem;
+  margin-left: -1rem;
+  
 }
 .HomeDescription__Playtitle {
   font-family: "PoppinsMedium";
-  font-size: 3rem;
+  font-size: 1.5rem;
   margin-left: -8.5rem;
   margin-top: -3rem;
   color: #686d77;
   cursor: pointer;
   transition: 0.25s all;
+  z-index: 1;
 }
 .HomeDescription__Playtitle:hover {
   color: #3a3d42;
+}
+/*
+  ================== ================
+    Video-Player Section
+  ================== ================
+*/
+.ReactModal__Overlay {
+  z-index: 1;
+}
+.player-container {
+  width: 400rem;
+}
+.ReactModal__Content {
+  display: flex;
+  width: 100rem;
+  height: 30rem;
+}
+.player {
+  padding-bottom: 56.25%;
+  box-shadow: 0px 20px 3px -7px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+  border-radius: 2rem;
+  border-top-left-radius: 10rem;
+}
+.player:fullscreen {
+  padding-bottom: 100vh;
+}
+.player:-webkit-full-screen {
+  padding-bottom: 100vh;
+}
+.player:-moz-full-screen {
+  padding-bottom: 100vh;
+}
+.player:-ms-fullscreen {
+  padding-bottom: 100vh;
+}
+.player video {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.controls {
+  padding: 0;
+  position: absolute;
+  bottom: -80px;
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 65%,
+    rgba(226, 69, 6, 0.8) 90%
+  );
+  transition: all 0.2s ease-in 5s;
+}
+.player:hover .controls {
+  bottom: 0;
+  transition: all 0.2s ease-out;
+}
+.time {
+  position: absolute;
+  right: 20px;
+  bottom: 115%;
+  padding-bottom: 14px;
+  background-color: #41423ae0;
+  border-bottom-left-radius: 30rem;
+  border-top-left-radius: 30rem;
+
+  padding: 10px;
+}
+.progress {
+  cursor: pointer;
+  height: 8px;
+  width: calc(100% - 40px);
+  background: rgba(180, 169, 218, 0.6);
+  margin: auto;
+  border-radius: 6px;
+  position: absolute;
+  left: 20px;
+  bottom: 100%;
+  transition: height 0.2s ease-in-out;
+}
+.progress:hover {
+  height: 12px;
+}
+.progress-filled {
+  background: var(--accent);
+  width: 0%;
+  height: 100%;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.controls-main {
+  width: calc(100% - 40px);
+  margin: auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.controls-left,
+.controls-right {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.controls-left {
+  margin-left: 10px;
+}
+.controls-right {
+  margin-right: 10px;
+  justify-content: flex-end;
+}
+.volume {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.volume-btn {
+  margin-right: 10px;
+  transition: 0.3s all;
+}
+.volume-btn:hover {
+  transform: scale(1.3);
+}
+.volume-btn #volume-off,
+.volume-btn #volume-high {
+  opacity: 0;
+}
+.volume-btn.loud #volume-high {
+  opacity: 1;
+}
+.volume-btn.muted #volume-off {
+  opacity: 1;
+}
+.volume-btn.muted #volume-high,
+.volume-btn.muted #volume-low {
+  opacity: 0;
+}
+.volume-slider {
+  height: 8px;
+  width: 80px;
+  background: rgba(60, 60, 60, 0.6);
+  border-radius: 6px;
+  position: relative;
+}
+.volume-filled {
+  background: var(--main);
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.2s ease-in-out;
+}
+.volume-filled:hover,
+.play-btn:hover.play-btn:before,
+.play-btn:hover.play-btn:after {
+  transition: 0.5s all;
+  background: var(--accent);
+}
+
+.play-btn {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  margin: auto;
+  transform: rotate(-90deg) scale(0.8);
+  transition: -webkit-clip-path 0.3s ease-in 0.1s,
+    shape-inside 0.3s ease-in 0.1s,
+    transform 0.8s cubic-bezier(0.85, -0.25, 0.25, 1.425);
+}
+.play-btn.paused {
+  transform: rotate(0deg);
+}
+.play-btn:before,
+.play-btn:after {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: inherit;
+}
+.play-btn:before {
+  -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 40%, 0 40%);
+  clip-path: polygon(0 10%, 100% 10%, 100% 40%, 0 40%);
+}
+.play-btn:after {
+  -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 90%, 0 90%);
+  clip-path: polygon(0 60%, 100% 60%, 100% 90%, 0 90%);
+}
+.play-btn.paused:before {
+  -webkit-clip-path: polygon(10% 0, 90% 51%, 90% 51%, 10% 51%);
+  clip-path: polygon(10% 0, 90% 51%, 90% 51%, 10% 51%);
+}
+.play-btn.paused:after {
+  -webkit-clip-path: polygon(10% 49.5%, 80% 49.5%, 90% 49.5%, 10% 100%);
+  clip-path: polygon(10% 49.5%, 80% 49.5%, 90% 49.5%, 10% 100%);
+}
+button:focus {
+  outline: none;
+}
+.speed-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  margin-right: 20px;
+  text-align: center;
+}
+.speed-list li {
+  color: var(--main);
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.speed-list li:hover,
+.speed-list li.active {
+  color: var(--accent);
+  font-weight: bold;
+}
+.fullscreen {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.fullscreen:hover {
+  transform: rotate(180deg) scale(1.5);
+  padding: 10px;
+}
+.DemoDescription {
+  font-family: "PoppinsText";
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
+}
+.sc-cwHqhk {
+  transition: all 0.75s;
+}
+.sc-cwHqhk:hover {
+  transform: scale(1.25);
 }

@@ -19,7 +19,7 @@
   src: url("../../src/fonts/Poppins/Poppins-Medium.ttf") format(truetype);
 }
 @font-face {
-  font-family: "Poppins";
+  font-family: "PoppinsText";
   font-weight: 400;
   src: url("../../src/fonts/Poppins/Poppins-Regular.ttf") format(truetype);
 }
