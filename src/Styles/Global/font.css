@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Open Medium";
+  src: url("../../src/fonts/Open_Sans/static/OpenSans-Medium.ttf")
+    format(truetype);
+}
+@font-face {
+  font-family: "Open SemiBold";
+  src: url("../../src/fonts/Open_Sans/static/OpenSans-SemiBold.ttf")
+    format(truetype);
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  src: url("../../src/fonts/Poppins/Poppins-Bold.ttf") format(truetype);
+}
+@font-face {
+  font-family: "PoppinsMedium";
+  font-weight: 500;
+  src: url("../../src/fonts/Poppins/Poppins-Medium.ttf") format(truetype);
+}
+@font-face {
+  font-family: "PoppinsText";
+  font-weight: 400;
+  src: url("../../src/fonts/Poppins/Poppins-Regular.ttf") format(truetype);
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: url("../../src/fonts/Poppins/Poppins-SemiBold.ttf") format(truetype);
+}
+@font-face {
+  font-family: "Volkhov";
+  font-weight: 700;
+  src: url("../../src/fonts/Volkhov/Volkhov-Bold.ttf") format(truetype);
+}
+@font-face {
+  font-family: "Poetsen";
+  font-weight: 500;
+  src: url("../../src/fonts/Poetsen/PoetsenOne-Regular.ttf") format(truetype);
+}
+@font-face {
+  font-family: "DastNevis";
+  font-weight: 500;
+  src: url("../../src/fonts/danstevis/danstevis.otf") format(truetype);
+}
+@font-face {
+  font-family: "Koodak";
+  font-weight: 500;
+  src: url("../../src/fonts/B-Koodak/B\ Koodak\ Bold_0.ttf") format(truetype);
+}
+@font-face {
+  font-family: "Dirooz";
+  font-weight: 500;
+  src: url("../../src/fonts/Dirooz/Dirooz.ttf") format(truetype);
+}

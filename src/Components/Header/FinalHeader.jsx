@@ -1,6 +1,7 @@
 import { AppProvider } from "./Context";
 import Header from "./Header";
 
+
 const FinalHeader = () => {
   return (
     <AppProvider>

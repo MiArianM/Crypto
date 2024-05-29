@@ -2,23 +2,33 @@ import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import IranCities from "../GetIP/IranCities.json";
 import { AppContext } from "./Context";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 
 const MenuLinks = ({ isMobile }) => {
   const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
-  const [isvisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    if (state.ip) {
+      setIsVisible(false);
+    }
+  }, [state.ip]);
+
   const HoverMenuItem = (e) => {
     e.target.classList.add("HoveredMenuItem");
   };
+
   const UnHoverMenuItem = (e) => {
     e.target.classList.remove("HoveredMenuItem");
   };
+
   const handleManualCountryChange = (e) => {
     dispatch({ type: "SET_MANUAL_COUNTRY", payload: e.target.value });
     dispatch({ type: "SET_LOCATION", payload: { country: e.target.value } });
     setIsVisible(false);
   };
+
   const links = [
     { text: t("Home"), href: "" },
     { text: t("Prices"), href: "" },
@@ -46,7 +56,7 @@ const MenuLinks = ({ isMobile }) => {
           </li>
         ))}
       </ul>
-      {isvisible && !state.ip && (
+      {isVisible && !state.ip && (
         <div className="GeoInfo">
           <select
             className="manual-country"
@@ -67,7 +77,9 @@ const MenuLinks = ({ isMobile }) => {
     </>
   );
 };
+
 MenuLinks.propTypes = {
   isMobile: PropTypes.bool,
 };
+
 export default MenuLinks;

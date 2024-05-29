@@ -1,0 +1,165 @@
+@media (min-width: 340px) {
+  .ReactModal__Content {
+    inset: 50% auto auto 42% !important;
+  }
+}
+@media (min-width: 352px) {
+  .DemoDescription {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 360px) {
+  .ReactModal__Content {
+    inset: 50% auto auto 43% !important;
+  }
+}
+@media (min-width: 370px) {
+  .ReactModal__Content {
+    inset: 50% auto auto 44% !important;
+  }
+}
+@media (min-width: 380px) {
+  .ReactModal__Content {
+    inset: 50% auto auto 45% !important;
+  }
+}
+@media (min-width: 410px) {
+  .ReactModal__Content {
+    inset: 50% auto auto 47% !important;
+  }
+  .HomeDescription__Playtitle {
+    padding-right: 1rem;
+  }
+  .HomeDescription {
+    width: 100%;
+  }
+}
+@media (min-width: 420px) {
+  .player-container {
+    width: 27rem;
+  }
+  .speed-list li {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 430px) {
+  .ReactModal__Content {
+    inset: 50% auto auto 48% !important;
+  }
+}
+@media (min-width: 490px) {
+  .player-container {
+    width: 30rem;
+  }
+  .DemoDescription {
+    font-size: 1.1rem;
+  }
+  .speed-list li {
+    padding: 2px;
+    font-size: 1.35rem;
+  }
+  .fullscreen {
+    width: 2.15rem;
+  }
+  .ReactModal__Content {
+    inset: 50% auto auto 50% !important;
+  }
+}
+@media (min-width: 641px) {
+  .player-container {
+    width: 34rem;
+  }
+  .DemoDescription {
+    font-size: 1.2rem;
+  }
+  .speed-list li {
+    padding: 3px;
+    font-size: 1.65rem;
+  }
+  .fullscreen {
+    width: 2.85rem;
+  }
+}
+@media (min-width: 768px) {
+  .Menu__Mobile {
+    display: none;
+  }
+  .Menu__MobileHamburger {
+    display: none;
+  }
+  .Menu__Desktop {
+    display: flex;
+    justify-content: center;
+  }
+  .menuitem__link {
+    display: block;
+  }
+  .menuitem__link::before {
+    position: absolute;
+    top: 2.5rem;
+    left: 15%;
+  }
+  .HoveredMenuItem.menuitem__link::before {
+    width: 70%;
+  }
+  .DesktopMenu__Links {
+    display: block;
+  }
+  header {
+    background: linear-gradient(rgba(59, 55, 53, 0.6), #bd542380),
+      url("../../Assest/ReaPics/TradeGuy.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  .ExtraInfos {
+    display: block;
+    top: 5rem;
+  }
+  .DesktopMenu__Links {
+    display: none;
+  }
+  .TypingStories1 {
+    font-size: 2.25rem;
+  }
+  .HomeDescription__Playtitle {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .DesktopMenu__Links {
+    display: block;
+  }
+  .ExtraInfos {
+    display: none;
+  }
+  .TypingStories1 {
+    font-size: 2.75rem;
+  }
+  .ReactModal__Content {
+    inset: 50% auto auto 50%;
+  }
+  .ReactModal__Content {
+    flex-direction: row;
+    width: 100rem;
+    height: 30rem;
+  }
+  .player-container {
+    width: 400rem;
+  }
+  .DemoDescription {
+    font-size: 1.4rem;
+  }
+  .controls-main {
+    width: calc(100% - 40px);
+  }
+}
+@media (min-width: 1200px) {
+  .TypingStories1 {
+    font-size: 3.75rem;
+  }
+}
+@media (min-width: 1400px) {
+  .TypingStories1 {
+    font-size: 4.75rem;
+  }
+}

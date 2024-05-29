@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect, useCallback } from "react";
-
 const VideoPlayer = () => {
   const videoRef = useRef(null);
   const playBtnRef = useRef(null);
@@ -195,7 +194,7 @@ const VideoPlayer = () => {
         <video
           id="video"
           ref={videoRef}
-          src="./src/Assest/Crypto.mp4"
+          src="./src/Assest/Videos/Crypto.mp4"
           autoPlay
           playsInline
           loop

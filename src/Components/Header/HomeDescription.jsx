@@ -2,9 +2,9 @@ import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { TypeAnimation } from "react-type-animation";
 import { AppContext } from "./Context";
-import SequenceEN from "../SequenceEN.json";
-import SequenceFA from "../SequenceFA.json";
-import SequenceDE from "../SequenceDE.json";
+import SequenceEN from "../SequanceTranslation/SequenceEN.json";
+import SequenceFA from "../SequanceTranslation/SequenceFA.json";
+import SequenceDE from "../SequanceTranslation/SequenceDE.json";
 import VideoModal from "./VideoModal";
 const HomeDescription = () => {
   const { state } = useContext(AppContext);

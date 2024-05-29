@@ -46,7 +46,7 @@ const NavBar = () => {
       <div className="Menu__wrapper">
         <a href="https://github.com/MiArianM" className="Logo" target="_blank">
           <img
-            src="./src/Assest/Logo.png"
+            src="./src/Assest/Images/Logo.png"
             alt="Mim Crypto Web"
             className="Logo__Img"
           />

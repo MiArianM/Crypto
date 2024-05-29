@@ -58,7 +58,7 @@ const Header = () => {
           console.log(countryCode);
           dispatch({
             type: "SET_FLAG_URL",
-            payload: "./public/MahFlag.png",
+            payload: "./src/Assest/Images/MahFlag.png",
           });
         }
       } catch (error) {
