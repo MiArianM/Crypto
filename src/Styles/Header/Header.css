@@ -3,64 +3,7 @@
  + GENERAL
  === === === === === === =====
 */
-:root {
-  --orange: rgb(223, 105, 81);
-  --backgroundHomeEffect: rgba(189, 35, 63, 0.5);
-  --backgroundImageEffect: rgba(59, 55, 53, 0.5);
-  --backgroundImageEffect1: rgb(223, 105, 81);
-  --backgroundMenuEffect2: rgb(255, 241, 218);
-  --MenuTextColor: rgb(33, 40, 50);
-  --accent: #0094ff;
-  --main: #ffffff;
-  --white: #ffffff;
-  --darkGray: rgb(112, 112, 112);
-  --lightGray: rgb(197, 197, 197);
-  --yellow: #cabe0c;
-  --lightYellow: #d6c90d;
-  --black: #000000;
-  --blue: rgb(131, 1, 1, 0.082);
-  --hoverBlue: rgba(131, 129, 1, 0.459);
-  --focusBlue: rgba(177, 116, 2, 0.747);
-  --grayBorder: #dbc2d7;
-  --lightPink: rgba(252, 226, 243, 0.959);
-  --teal: rgba(80, 143, 138, 0.39);
-  --darkBlue: #181e4b;
-  --grayText: #5e6282;
-  --lightGrayBorder: rgba(60, 60, 60, 0.6);
-  --hoverGray: rgba(180, 169, 218, 0.6);
-  --timeBackground: #41423ae0;
-  --gradientLight: rgba(255, 255, 255, 0.4);
-  --gradientDark: rgba(226, 69, 6, 0.8);
-  --hoverGrayBorder: #cabe0c;
-  --defaultFontSize: 2rem;
-  --menuItemMargin: 1rem;
-  --headerHeight: 99vh;
-  --borderRadius: 4rem;
-  --borderRadiusLarge: 6.75rem;
-  --fontSizeSmall: 1.5rem;
-  --fontSizeMedium: 1.6rem;
-  --fontSizeLarge: 1.25rem;
-  --fontSizeXL: 1.3rem;
-  --fontSizeXXL: 1.25rem;
-  --hamburgerWidth: 4.5rem;
-  --geoInfoWidth: 1.5rem;
-  --manualCountryPadding: 10px;
-  --manualCountryBorder: 1px solid var(--grayBorder);
-  --manualCountryBorderRadius: 4px;
-  --manualCountryMaxWidth: 300px;
-  --playerContainerWidth: 20rem;
-  --playerBorderRadius: 2rem;
-  --playerBorderRadiusLarge: 10rem;
-  --progressHeight: 8px;
-  --progressHeightHover: 12px;
-  --volumeWidth: 80px;
-  --volumeHeight: 8px;
-  --playButtonWidth: 24px;
-  --playButtonHeight: 30px;
-  --fullscreenWidth: 1.55rem;
-  --fullscreenHoverTransform: rotate(180deg) scale(1.5);
-  --demoDescriptionFontSize: 0.9rem;
-}
+
 header {
   background: linear-gradient(
       var(--backgroundImageEffect),
@@ -461,7 +404,7 @@ body.fa-language {
   width: 37rem;
   height: 1.5rem !important;
   display: block;
-  background: url("../Assest/Images/BackOfText.png");
+  background: url("../../Assest/Images/BackOfText.png");
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
