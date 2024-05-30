@@ -18,7 +18,8 @@
     "react-i18next": "^14.1.2",
     "react-modal": "^3.16.1",
     "react-type-animation": "^3.2.0",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

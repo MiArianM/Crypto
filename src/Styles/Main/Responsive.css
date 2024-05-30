@@ -1,0 +1,29 @@
+@media (min-width: 768px) {
+  .Service {
+    flex-direction: row;
+  }
+  .Service__More{
+    height: 18rem;
+    border-top: none;
+    border-left: 1px solid gray;
+  }
+}
+@media (min-width: 992px) {
+  .Service {
+    flex-direction: column;
+    margin: 0.5rem;
+    width: 30rem;
+    justify-content: space-around;
+  }
+  .Services {
+    flex-direction: row;
+  }
+  .Service__Image {
+    width: 16rem;
+  }
+  .Service__More{
+    height: 5rem;
+    border-left:none;
+    border-top: 1px solid gray;
+  }
+}
