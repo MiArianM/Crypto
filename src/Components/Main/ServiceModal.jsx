@@ -1,7 +1,7 @@
 import Modal from "react-modal";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-
+import { useTranslation } from "react-i18next";
 const modalStyles1 = {
   content: {
     top: "50%",
@@ -13,12 +13,11 @@ const modalStyles1 = {
     border: "4px solid black",
     borderRadius: "4rem",
     overflow: "hidden",
+    width: "2rem",
   },
   overlay: {
     backgroundImage:
       "linear-gradient(to left bottom, rgba(220, 210, 110, 0.8), rgba(211, 244, 150, 0.6), rgba(136, 215, 187, 0.8), rgba(178, 217, 245, 0.8), rgba(230, 210, 42, 0.5))",
-
-    backgroundColor: "rgba(220, 210, 110, 0.8)",
   },
 };
 const modalStyles2 = {
@@ -85,6 +84,8 @@ const CloseButton = styled.button`
 
 const ServiceModal = ({ isOpen, onRequestClose, description }) => {
   const { MoreDescription, HoverColored } = description;
+  const { t } = useTranslation();
+
   return (
     <Modal
       isOpen={isOpen}
@@ -103,14 +104,18 @@ const ServiceModal = ({ isOpen, onRequestClose, description }) => {
       <CloseButton onClick={onRequestClose}>&times;</CloseButton>
       <div style={{ padding: "20px", backgroundColor: "white" }}>
         {MoreDescription && MoreDescription.length > 0 ? (
-          <ul>
-            {MoreDescription.map((item, index) => (
-              <li key={index}>
-                <h2>{item.ProsTitle}</h2>
-                <p>{item.Description}</p>
-              </li>
-            ))}
-          </ul>
+          <div className="timeline-container">
+            <div className="rocket"></div>
+            <ol>
+              {MoreDescription.map((item, index) => (
+                <li data-step={index+1} key={index}>
+                  <div className="content">
+                    <h4>{t(item.ProsTitle)}</h4>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
         ) : (
           <p>No additional information available.</p>
         )}

@@ -36,7 +36,7 @@ function WebMain() {
                 className="Service__More"
                 onClick={() => handleMoreClick(service)}
               >
-                More
+                {t("More")}
               </button>
             </div>
           ))}

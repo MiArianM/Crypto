@@ -1,32 +1,9 @@
-@media (min-width: 340px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 42% !important;
-  }
-}
 @media (min-width: 352px) {
   .DemoDescription {
     font-size: 1rem;
   }
 }
-@media (min-width: 360px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 43% !important;
-  }
-}
-@media (min-width: 370px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 44% !important;
-  }
-}
-@media (min-width: 380px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 45% !important;
-  }
-}
 @media (min-width: 410px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 47% !important;
-  }
   .HomeDescription__Playtitle {
     padding-right: 1rem;
   }
@@ -42,11 +19,6 @@
     font-size: 1.25rem;
   }
 }
-@media (min-width: 430px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 48% !important;
-  }
-}
 @media (min-width: 490px) {
   .player-container {
     width: 30rem;
@@ -60,9 +32,6 @@
   }
   .fullscreen {
     width: 2.15rem;
-  }
-  .ReactModal__Content {
-    inset: 50% auto auto 50% !important;
   }
 }
 @media (min-width: 641px) {
@@ -134,14 +103,6 @@
   }
   .TypingStories1 {
     font-size: 2.75rem;
-  }
-  .ReactModal__Content {
-    inset: 50% auto auto 50%;
-  }
-  .ReactModal__Content {
-    flex-direction: row;
-    width: 100rem;
-    height: 30rem;
   }
   .player-container {
     width: 400rem;

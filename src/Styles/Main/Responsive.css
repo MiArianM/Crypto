@@ -1,3 +1,6 @@
+.ReactModal__Content {
+  inset: 50% auto auto 50% !important ;
+}
 @media (min-width: 768px) {
   .Service {
     flex-direction: row;
