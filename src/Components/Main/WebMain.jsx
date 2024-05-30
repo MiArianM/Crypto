@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Services from "../Services.json";
-import PropTypes from "prop-types";
-import { v4 } from "uuid";
+import ServiceModal from "./ServiceModal";
+import { useTranslation } from "react-i18next";
 function WebMain() {
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation();
 
   const handleMoreClick = (service) => {
     setSelectedService(service);
@@ -28,8 +29,8 @@ function WebMain() {
                 alt={service.alt}
               />
               <div className="Service__Infos">
-                <h2 className="Service__Title">{service.Title}</h2>
-                <p className="Service__Description">{service.Description}</p>
+                <h2 className="Service__Title">{t(service.Title)}</h2>
+                <p className="Service__Description">{t(service.Description)}</p>
               </div>
               <button
                 className="Service__More"
@@ -37,47 +38,22 @@ function WebMain() {
               >
                 More
               </button>
-              {isModalOpen && selectedService && (
-                <Modal
-                  Data={{
-                    MoreDescription: service.MoreDescription,
-                    HoverColored: service.HoverColored,
-                  }}
-                  service={selectedService}
-                  onClose={closeModal}
-                />
-              )}
             </div>
           ))}
         </section>
       </div>
+      {isModalOpen && selectedService && (
+        <ServiceModal
+          isOpen={isModalOpen}
+          onRequestClose={closeModal}
+          description={{
+            MoreDescription: selectedService.MoreDescription,
+            HoverColored: selectedService.HoverColored,
+          }}
+        />
+      )}
     </main>
   );
 }
 
-function Modal({ service, onClose, Data }) {
-  // eslint-disable-next-line react/prop-types
-  const { MoreDescription, HoverColored } = Data;
-  return (
-    <div className="modal">
-      <div className="modal-content">
-        <span className="close-button" onClick={onClose}>
-          &times;
-        </span>
-        <ul>
-          {MoreDescription.map((Description) => (
-            <li key={v4()}>
-              <h2>{Description.ProsTitle}</h2>
-              <p>{Description.Description}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-Modal.propTypes = {
-  service: PropTypes.bool,
-  onClose: PropTypes.bool,
-};
 export default WebMain;

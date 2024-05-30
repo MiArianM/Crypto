@@ -46,7 +46,6 @@ const Header = () => {
         : state.manualCountry;
       try {
         if (!isFarsi(countryCode)) {
-          console.log(countryCode);
           const response = await axios.get(
             `https://restcountries.com/v3.1/alpha/${countryCode}`
           );

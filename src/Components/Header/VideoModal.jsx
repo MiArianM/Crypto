@@ -48,8 +48,8 @@ const VideoModal = ({ isOpen, onRequestClose, description }) => {
 };
 VideoModal.propTypes = {
   isOpen: PropTypes.bool,
-  onRequestClose: PropTypes.bool,
-  videoUrl: PropTypes.bool,
-  description: PropTypes.bool,
+  onRequestClose: PropTypes.func,
+  videoUrl: PropTypes.string,
+  description: PropTypes.string,
 };
 export default VideoModal;

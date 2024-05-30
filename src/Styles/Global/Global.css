@@ -71,3 +71,10 @@ a {
 body {
   font-size: 1.6rem;
 }
+.sc-lmUbDS {
+  transition: 0.5s all;
+}
+.sc-lmUbDS:hover {
+  width: fit-content;
+  transform: scale(1.5) translateX(-1rem);
+}

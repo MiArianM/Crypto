@@ -15,6 +15,9 @@
     width: 30rem;
     justify-content: space-around;
   }
+  .Service__Title{
+    margin-top: 1rem;
+  }
   .Services {
     flex-direction: row;
   }
