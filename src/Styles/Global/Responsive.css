@@ -1,46 +1,11 @@
-@media (min-width: 340px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 42% ;
-  }
-}
-
-@media (min-width: 360px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 43% ;
-  }
-}
-@media (min-width: 370px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 44% ;
-  }
-}
-@media (min-width: 380px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 45% ;
-  }
-}
-@media (min-width: 410px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 47% ;
-  }
-}
-@media (min-width: 430px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 48% ;
-  }
-}
-@media (min-width: 490px) {
-  .ReactModal__Content {
-    inset: 50% auto auto 50% ;
-  }
+.ReactModal__Content {
+  margin-right: 50% !important;
+  inset: 40% auto auto 45% !important ;
 }
 @media (min-width: 992px) {
   .ReactModal__Content {
-    inset: 50% auto auto 50%;
-  }
-  .ReactModal__Content {
     flex-direction: row;
     width: 100rem;
-    height: 30rem;
+    height: 40%;
   }
 }
