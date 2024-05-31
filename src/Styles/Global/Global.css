@@ -70,6 +70,20 @@ body.fa-language {
   .menuitem__link {
     font-family: "DastNevis";
   }
+  .hamburgerLine {
+    width: 3rem;
+  }
+  .Menu__MobileHamburger--Opened > .hamburgerLine::before {
+    width: 3.55rem;
+    transform: rotate(-35deg) translateX(6px) translateY(-4px);
+  }
+  .Menu__MobileHamburger--Opened > .hamburgerLine::after {
+    transform: rotate(35deg) translateX(6px) translateY(6.5px);
+    width: 3.55rem;
+  }
+  .Menu__Link.Menu__Link--Border{
+    font-family: "Koodak";
+  }
   .HomeDescription__Title {
     font-family: "Koodak";
   }
@@ -106,9 +120,7 @@ body.fa-language {
   .Menu__Mobile--Opened {
     right: 0;
   }
-  .hamburgerLine {
-    width: var(--hamburgerWidth);
-  }
+
   .ReactModalPortal {
     direction: ltr;
   }
@@ -130,6 +142,13 @@ body.fa-language {
   }
   .Service__More:hover {
     font-size: 2rem;
+  }
+  .ServiceThings__ProTitle{
+    font-family: "DastNevis";
+  }
+  .DesciptionText{
+    font-family: "Dirooz";
+    direction: rtl;
   }
 }
 a {

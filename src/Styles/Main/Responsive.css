@@ -1,11 +1,12 @@
 .ReactModal__Content {
   inset: 50% auto auto 50% !important ;
 }
+
 @media (min-width: 768px) {
   .Service {
     flex-direction: row;
   }
-  .Service__More{
+  .Service__More {
     height: 18rem;
     border-top: none;
     border-left: 1px solid gray;
@@ -18,7 +19,7 @@
     width: 30rem;
     justify-content: space-around;
   }
-  .Service__Title{
+  .Service__Title {
     margin-top: 1rem;
   }
   .Services {
@@ -27,9 +28,22 @@
   .Service__Image {
     width: 16rem;
   }
-  .Service__More{
+  .Service__More {
     height: 5rem;
-    border-left:none;
+    border-left: none;
     border-top: 1px solid gray;
+  }
+  .rocket {
+    height: 85rem;
+    width: 85rem;
+    transform: rotateZ(0) rotateZ(90deg);
+    left: 0;
+  }
+  .VideoContainer {
+  }
+  .ServiceThings__description {
+    position: relative;
+    flex-grow: 1;
+    height: 28rem;
   }
 }

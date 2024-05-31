@@ -22,6 +22,7 @@
         "Description": "Since its inception, Bitcoin has inspired the creation of thousands of other cryptocurrencies and has become a prominent player in the financial world. It is widely regarded as a store of value, often referred to as 'digital gold,' and is used for various purposes, including investment, remittances, and as a medium of exchange."
       }
     ],
+    "VideoUrl": "./src/Assest/Videos/Bitcoin.mp4",
     "HoverColored": "Bitcoin"
   },
   {
@@ -47,6 +48,7 @@
         "Description": "Despite controversies and scrutiny surrounding its transparency and reserve backing, Tether remains one of the most widely used stablecoins, enjoying widespread adoption and serving as a crucial component of the digital asset ecosystem."
       }
     ],
+    "VideoUrl": "./src/Assest/Videos/Tether.mp4",
     "HoverColored": "Tether"
   },
   {
@@ -72,6 +74,7 @@
         "Description": "Cardano features a layered architecture, separating the settlement layer (which handles ADA transactions) from the computation layer (which handles smart contracts). This design enhances security and flexibility."
       }
     ],
+    "VideoUrl": "./src/Assest/Videos/Cardano.mp4",
     "HoverColored": "Cardano"
   },
   {
@@ -97,6 +100,7 @@
         "Description": "Ethereum is undergoing a significant upgrade known as Ethereum 2.0 (or Eth2), which aims to improve scalability, security, and sustainability. One of the key changes is the transition from a Proof-of-Work (PoW) consensus mechanism to a Proof-of-Stake (PoS) mechanism, which is expected to reduce energy consumption and increase transaction speeds."
       }
     ],
+    "VideoUrl": "./src/Assest/Videos/Ether.mp4",
     "HoverColored": "Ether"
   }
 ]

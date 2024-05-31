@@ -2,6 +2,7 @@ import Modal from "react-modal";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 const modalStyles1 = {
   content: {
     top: "50%",
@@ -13,7 +14,6 @@ const modalStyles1 = {
     border: "4px solid black",
     borderRadius: "4rem",
     overflow: "hidden",
-    width: "2rem",
   },
   overlay: {
     backgroundImage:
@@ -80,12 +80,70 @@ const CloseButton = styled.button`
   font-size: 4rem;
   color: red;
   cursor: pointer;
+  z-index: 2;
 `;
+const RotatingList = ({ MoreDescription, VideoUrl }) => {
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [isExiting, setIsExiting] = useState(false);
+  const { t } = useTranslation();
+  console.log("VideoUrl:", VideoUrl);
+  const handleClick = (index) => {
+    setSelectedItem(index);
+    setIsExiting(false);
+  };
+
+  const handleUndo = () => {
+    setIsExiting(true);
+    setTimeout(() => {
+      setSelectedItem(null);
+      setIsExiting(false);
+    }, 600);
+  };
+
+  return (
+    <>
+      <ol
+        className={` ServiceThings ${selectedItem !== null ? "rotated" : ""}`}
+      >
+        {MoreDescription.map((item, index) => (
+          <li
+            className="ServiceThings__item"
+            data-step={index + 1}
+            key={index}
+            onClick={() => handleClick(index)}
+          >
+            <div className="ServiceThings__content">
+              <h4 className="ServiceThings__ProTitle">{t(item.ProsTitle)}</h4>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      {selectedItem !== null && (
+        <div
+          className={`ServiceThings__description ${
+            isExiting ? "exiting" : "coming"
+          }`}
+        >
+          <video className="VideoContainer" autoPlay loop muted>
+            <source className="CryptoVideo" src={VideoUrl} />
+            Your browser does not support the video tag.
+          </video>
+          <div className="DescriptionContent">
+            {" "}
+            <p className="DesciptionText">{t(MoreDescription[selectedItem].Description)}</p>
+            <button className="UndoButton" onClick={handleUndo}>
+              Undo
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 
 const ServiceModal = ({ isOpen, onRequestClose, description }) => {
-  const { MoreDescription, HoverColored } = description;
-  const { t } = useTranslation();
-
+  const { MoreDescription, VideoUrl, HoverColored } = description;
   return (
     <Modal
       isOpen={isOpen}
@@ -106,15 +164,10 @@ const ServiceModal = ({ isOpen, onRequestClose, description }) => {
         {MoreDescription && MoreDescription.length > 0 ? (
           <div className="timeline-container">
             <div className="rocket"></div>
-            <ol>
-              {MoreDescription.map((item, index) => (
-                <li data-step={index+1} key={index}>
-                  <div className="content">
-                    <h4>{t(item.ProsTitle)}</h4>
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <RotatingList
+              MoreDescription={MoreDescription}
+              VideoUrl={VideoUrl}
+            />
           </div>
         ) : (
           <p>No additional information available.</p>
@@ -135,7 +188,17 @@ ServiceModal.propTypes = {
       })
     ).isRequired,
     HoverColored: PropTypes.string.isRequired,
+    VideoUrl: PropTypes.string.isRequired,
   }).isRequired,
 };
 
+RotatingList.propTypes = {
+  MoreDescription: PropTypes.arrayOf(
+    PropTypes.shape({
+      ProsTitle: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  VideoUrl: PropTypes.string.isRequired,
+};
 export default ServiceModal;

@@ -49,6 +49,7 @@ function WebMain() {
           description={{
             MoreDescription: selectedService.MoreDescription,
             HoverColored: selectedService.HoverColored,
+            VideoUrl: selectedService.VideoUrl,
           }}
         />
       )}
