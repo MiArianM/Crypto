@@ -35,11 +35,9 @@
     transform: rotateZ(0) rotateZ(90deg);
     left: 0;
   }
-  .VideoContainer {
-  }
   .ServiceThings__description {
     position: relative;
     flex-grow: 1;
-    height: 28rem;
+    height: 30rem;
   }
 }

@@ -3,7 +3,6 @@ import { AppContext } from "./Context";
 
 const GeoInfo = () => {
   const { state } = useContext(AppContext);
-
   return state.location ? (
     <div className="GeoInfo">
       <span className="GeoInfo__Items">

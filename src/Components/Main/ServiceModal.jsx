@@ -127,13 +127,15 @@ const RotatingList = ({ MoreDescription, VideoUrl }) => {
         >
           <video className="VideoContainer" autoPlay loop muted>
             <source className="CryptoVideo" src={VideoUrl} />
-            Your browser does not support the video tag.
+            {t("Your browser does not support the video tag.")}
           </video>
           <div className="DescriptionContent">
             {" "}
-            <p className="DesciptionText">{t(MoreDescription[selectedItem].Description)}</p>
+            <p className="DesciptionText">
+              {t(MoreDescription[selectedItem].Description)}
+            </p>
             <button className="UndoButton" onClick={handleUndo}>
-              Undo
+              {t("Undo")}
             </button>
           </div>
         </div>

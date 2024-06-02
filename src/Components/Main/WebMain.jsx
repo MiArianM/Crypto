@@ -6,7 +6,6 @@ function WebMain() {
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useTranslation();
-
   const handleMoreClick = (service) => {
     setSelectedService(service);
     setIsModalOpen(true);

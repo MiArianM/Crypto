@@ -150,6 +150,9 @@ body.fa-language {
     font-family: "Dirooz";
     direction: rtl;
   }
+  .UndoButton{
+    cursor: pointer;
+  }
 }
 a {
   text-decoration: none;
@@ -160,6 +163,7 @@ body {
 .sc-lmUbDS,
 .sc-gEvDqW {
   transition: 0.5s all;
+  z-index: 1;
 }
 .sc-lmUbDS:hover,
 .sc-gEvDqW:hover {

@@ -31,8 +31,8 @@ const MenuLinks = ({ isMobile }) => {
 
   const links = [
     { text: t("Home"), href: "" },
-    { text: t("Prices"), href: "" },
     { text: t("Products"), href: "" },
+    { text: t("Prices"), href: "" },
     { text: t("Company"), href: "" },
     { text: t("Learn"), href: "" },
   ];

@@ -37,6 +37,7 @@ const VideoModal = ({ isOpen, onRequestClose, description }) => {
       onRequestClose={onRequestClose}
       style={modalStyles}
       ariaHideApp={false}
+      id="DemoModal"
     >
       <CloseButton onClick={onRequestClose}>&times;</CloseButton>
       <VideoPlayer />

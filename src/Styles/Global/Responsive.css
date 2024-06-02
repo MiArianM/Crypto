@@ -1,11 +1,29 @@
 .ReactModal__Content {
   margin-right: 50% !important;
-  inset: 40% auto auto 45% !important ;
+  inset: 50% auto auto 45% !important ;
+  width: 80%;
+}
+#DemoModal {
+  inset: 45% auto auto 45% !important ;
+}
+body.fa-language .HomeDescriptionVideo__Play {
+  margin-left: -8.5rem;
+}
+@media (min-width: 352px) {
+  #DemoModal {
+    inset: 45% auto auto 45% !important ;
+  }
+}
+@media (min-width: 385px) {
+  body.fa-language .HomeDescriptionVideo__Play {
+    margin-left: 0;
+  }
 }
 @media (min-width: 992px) {
   .ReactModal__Content {
     flex-direction: row;
-    width: 100rem;
-    height: 40%;
+    width: 80%;
+    height: 70%;
+    inset: 50% auto auto 45% !important ;
   }
 }
