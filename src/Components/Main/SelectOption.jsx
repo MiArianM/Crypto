@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faBtc, faEthereum } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from "react-i18next";
 import {
   faDollarSign,
   faEuroSign,
@@ -10,6 +11,8 @@ import {
   faRubleSign,
 } from "@fortawesome/free-solid-svg-icons";
 const SelectOption = ({ setCurrencies }) => {
+  const { t } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const options = [
@@ -66,7 +69,7 @@ const SelectOption = ({ setCurrencies }) => {
             <span>
               {selectedOption
                 ? selectedOption.label
-                : "Select a Currencie(USD)"}
+                : t("Select a Currencie(USD)")}
             </span>
           </div>
           <div id="chevrons">

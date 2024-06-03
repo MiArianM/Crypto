@@ -4,6 +4,9 @@ import Stack from "@mui/material/Stack";
 import { ThreeDots } from "react-loader-spinner";
 import SelectOption from "./SelectOption";
 import RowPagination from "./RowPagination";
+import SearchCrypto from "./SearchCrypto";
+import { useTranslation } from "react-i18next";
+
 function TableCoin({
   DataOfCryptos,
   setPage,
@@ -18,30 +21,40 @@ function TableCoin({
   const handleChange = (event, value) => {
     setPage(value);
   };
+  const { t } = useTranslation();
 
   return (
     <>
-      <Stack spacing={2}>
-        <Pagination
-          page={page}
-          count={Math.ceil(Cryptos.length / 15)}
-          variant="outlined"
-          color="secondary"
-          onChange={handleChange}
-        />
-      </Stack>
-      <SelectOption setCurrencies={setCurrencies} />
-      <RowPagination setSelectValue={setSelectValue} />
+      <div className="TableSetting">
+        <div className="prANDnumber">
+          <Stack spacing={2}>
+            <Pagination
+              page={page}
+              count={Math.ceil(Cryptos.length / 15)}
+              variant="outlined"
+              color="secondary"
+              onChange={handleChange}
+            />
+          </Stack>
+          <SelectOption setCurrencies={setCurrencies} />
+        </div>
+        <div className="CurANDsearch">
+          {" "}
+          <RowPagination setSelectValue={setSelectValue} />
+          <SearchCrypto />
+        </div>
+      </div>
+
       <table>
-        <caption>Coin Status</caption>
+        <caption>{t("Coin Status")}</caption>
         <thead>
           <tr>
-            <th scope="col">Coin</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">At 24H</th>
-            <th scope="col">Total Volume</th>
-            <th scope="col">Chart</th>
+            <th scope="col">{t("Coin")}</th>
+            <th scope="col">{t("Name")}</th>
+            <th scope="col">{t("Price")}</th>
+            <th scope="col">{t("At 24H")}</th>
+            <th scope="col">{t("Total Volume")}</th>
+            <th scope="col">{t("Chart")}</th>
           </tr>
         </thead>
         <tbody>

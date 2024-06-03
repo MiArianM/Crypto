@@ -23,11 +23,6 @@
   src: url("../../fonts/Poppins/Poppins-Regular.ttf") format(truetype);
 }
 @font-face {
-  font-family: "Poppins";
-  font-weight: 600;
-  src: url("../../fonts/Poppins/Poppins-SemiBold.ttf") format(truetype);
-}
-@font-face {
   font-family: "Volkhov";
   font-weight: 700;
   src: url("../../fonts/Volkhov/Volkhov-Bold.ttf") format(truetype);

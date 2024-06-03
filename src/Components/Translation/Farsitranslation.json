@@ -59,5 +59,15 @@
   "Decentralized Applications (dApps)": "برنامه های غیرمتمرکز (dApps)",
   "Ethereum also supports decentralized applications, or dApps, which run on its blockchain. These applications operate without a central authority, offering greater transparency, security, and resilience. dApps can cover a wide range of services, including finance (DeFi), gaming, supply chain management, and social media.": "اتریوم همچنین از برنامه های غیرمتمرکز یا dApps که روی بلاک چین اجرا می شوند، پشتیبانی می کند. این برنامه ها بدون یک مرجع مرکزی کار می کنند و شفافیت، امنیت و انعطاف پذیری بیشتری را ارائه می دهند. dApps می تواند طیف گسترده ای از خدمات، از جمله امور مالی (DeFi)، بازی، مدیریت زنجیره تامین و رسانه های اجتماعی را پوشش دهد.",
   "Ethereum 2.0 and the Future": "اتریوم 2.0 و آینده",
-  "Ethereum is undergoing a significant upgrade known as Ethereum 2.0 (or Eth2), which aims to improve scalability, security, and sustainability. One of the key changes is the transition from a Proof-of-Work (PoW) consensus mechanism to a Proof-of-Stake (PoS) mechanism, which is expected to reduce energy consumption and increase transaction speeds.": "اتریوم در حال ارتقاء قابل توجهی به نام اتریوم 2.0 (یا Eth2) است که هدف آن بهبود مقیاس پذیری، امنیت و پایداری است. یکی از تغییرات کلیدی انتقال از مکانیسم اجماع اثبات کار (PoW) به مکانیزم اثبات سهام (PoS) است که انتظار می‌رود مصرف انرژی را کاهش داده و سرعت تراکنش را افزایش دهد."
+  "Ethereum is undergoing a significant upgrade known as Ethereum 2.0 (or Eth2), which aims to improve scalability, security, and sustainability. One of the key changes is the transition from a Proof-of-Work (PoW) consensus mechanism to a Proof-of-Stake (PoS) mechanism, which is expected to reduce energy consumption and increase transaction speeds.": "اتریوم در حال ارتقاء قابل توجهی به نام اتریوم 2.0 (یا Eth2) است که هدف آن بهبود مقیاس پذیری، امنیت و پایداری است. یکی از تغییرات کلیدی انتقال از مکانیسم اجماع اثبات کار (PoW) به مکانیزم اثبات سهام (PoS) است که انتظار می‌رود مصرف انرژی را کاهش داده و سرعت تراکنش را افزایش دهد.",
+  "Coin Status": "وضعیت بازار ارز",
+  "Records Per Page :": "تعداد نتیجه در صفحه :",
+  "Write Crypto . . ": "ارز خود را بنویسید . .(بر اساس انگلیسی)",
+  "Select a Currencie(USD)": "کارنسی خود را انتخاب کنید(بر اساس دلار)",
+  "Coin": "ارز",
+  "Name": "نام",
+  "Price": "قیمت",
+  "At 24H": "در 24 ساعت گذشته",
+  "Total Volume": "تعداد ارز در جهان",
+  "Chart": "نمودار"
 }

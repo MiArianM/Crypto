@@ -55,5 +55,15 @@
   "Decentralized Applications (dApps)": "Dezentrale Anwendungen (dApps)",
   "Ethereum also supports decentralized applications, or dApps, which run on its blockchain. These applications operate without a central authority, offering greater transparency, security, and resilience. dApps can cover a wide range of services, including finance (DeFi), gaming, supply chain management, and social media.": "Ethereum unterstützt auch dezentrale Anwendungen oder dApps, die auf seiner Blockchain laufen. Diese Anwendungen arbeiten ohne zentrale Autorität und bieten mehr Transparenz, Sicherheit und Widerstandsfähigkeit. dApps können eine Vielzahl von Dienstleistungen abdecken, darunter Finanzen (DeFi), Spiele, Lieferkettenmanagement und soziale Medien.",
   "Ethereum 2.0 and the Future": "Ethereum 2.0 und die Zukunft",
-  "Ethereum is undergoing a significant upgrade known as Ethereum 2.0 (or Eth2), which aims to improve scalability, security, and sustainability. One of the key changes is the transition from a Proof-of-Work (PoW) consensus mechanism to a Proof-of-Stake (PoS) mechanism, which is expected to reduce energy consumption and increase transaction speeds.": "Ethereum unterzieht sich einem bedeutenden Upgrade, das als Ethereum 2.0 (oder Eth2) bekannt ist und darauf abzielt, Skalierbarkeit, Sicherheit und Nachhaltigkeit zu verbessern. Eine der wichtigsten Änderungen ist der Übergang von einem Proof-of-Work (PoW) Konsensmechanismus zu einem Proof-of-Stake (PoS) Mechanismus, der den Energieverbrauch senken und die Transaktionsgeschwindigkeit erhöhen soll."
+  "Ethereum is undergoing a significant upgrade known as Ethereum 2.0 (or Eth2), which aims to improve scalability, security, and sustainability. One of the key changes is the transition from a Proof-of-Work (PoW) consensus mechanism to a Proof-of-Stake (PoS) mechanism, which is expected to reduce energy consumption and increase transaction speeds.": "Ethereum unterzieht sich einem bedeutenden Upgrade, das als Ethereum 2.0 (oder Eth2) bekannt ist und darauf abzielt, Skalierbarkeit, Sicherheit und Nachhaltigkeit zu verbessern. Eine der wichtigsten Änderungen ist der Übergang von einem Proof-of-Work (PoW) Konsensmechanismus zu einem Proof-of-Stake (PoS) Mechanismus, der den Energieverbrauch senken und die Transaktionsgeschwindigkeit erhöhen soll.",
+  "Coin Status": "Münzstatus",
+  "Records Per Page :": "Datensätze pro Seite :",
+  "Write Crypto . . ": "Krypto schreiben . .",
+  "Select a Currencie(USD)": "Wählen Sie eine Währung (USD)",
+  "Coin": "Münze",
+  "Name": "Name",
+  "Price": "Preis",
+  "At 24H": "Um 24 Uhr",
+  "Total Volume": "Gesamtvolumen",
+  "Chart": "Diagramm"
 }

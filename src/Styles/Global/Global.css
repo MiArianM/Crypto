@@ -160,6 +160,32 @@ body.fa-language {
   .UndoButton {
     cursor: pointer;
   }
+  table caption {
+    font-family: "DastNevis";
+  }
+  table th {
+    font-family: "Dirooz";
+  }
+  .perRow {
+    font-family: "Dirooz";
+    margin-right: 2rem;
+  }
+  .CryptoSearch {
+    margin-left: 0;
+    margin-right: 45%;
+  }
+  .CryptoSearch__Search {
+    font-family: "Koodak";
+    width: 25rem;
+  }
+  #app-cover {
+    left: 0;
+    right: auto;
+  }
+  #options{
+    left: 0;
+    direction: ltr;
+  }
 }
 a {
   text-decoration: none;

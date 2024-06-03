@@ -10,8 +10,22 @@
   .Coin__Image {
     width: 5rem;
   }
-  .Coin__symbol{
+  .Coin__symbol {
     display: block;
+  }
+  .TableSetting {
+    flex-direction: row;
+  }
+  .prANDnumber {
+    align-items: start;
+    margin-left: 0;
+  }
+  .perRow {
+    justify-content: right !important;
+    margin-left: 0;
+  }
+  .CryptoSearch {
+    margin-left: 30%;
   }
 }
 @media (min-width: 992px) {
