@@ -1,4 +1,3 @@
-// App.jsx
 import WebFooter from "./Components/WebFooter";
 import WebMain from "./Components/Main/WebMain";
 import FinalHeader from "./Components/Header/FinalHeader";

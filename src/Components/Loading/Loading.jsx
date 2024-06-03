@@ -1,4 +1,4 @@
-import { useLoading } from "./LoadingContext";
+import { useLoading } from "./useLoading";
 
 const Loading = () => {
   const { state } = useLoading();

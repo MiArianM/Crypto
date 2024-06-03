@@ -6,8 +6,8 @@
   margin: 0 auto;
   z-index: 2;
   background: #ccccb2;
-  background: -webkit-linear-gradient(to right, #7a4716, #ccccb2);
-  background: linear-gradient(to right, #7a4716, #ccccb2);
+  background: -webkit-linear-gradient(to right, #7a1616, #ccccb2);
+  background: linear-gradient(to right, #943b12, #ccccb2);
   height: 100vh;
   .lightning-container {
     position: absolute;

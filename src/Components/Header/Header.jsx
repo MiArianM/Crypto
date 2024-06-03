@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import HomeDescription from "./HomeDescription";
 import { AppContext } from "./Context";
 import axios from "axios";
-import { useLoading } from "../Loading/LoadingContext";
+import { useLoading } from "../Loading/useLoading";
 
 const initialstate = { Task1: false, Task2: false, Task3: false };
 const reducer = (Loadstate, action) => {
