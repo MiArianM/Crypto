@@ -65,6 +65,13 @@ html {
 *:before {
   box-sizing: inherit;
 }
+* {
+  user-select: none;
+}
+
+*:focus {
+  outline: none;
+}
 body.fa-language {
   direction: rtl;
   .menuitem__link {
@@ -81,7 +88,7 @@ body.fa-language {
     transform: rotate(35deg) translateX(6px) translateY(6.5px);
     width: 3.55rem;
   }
-  .Menu__Link.Menu__Link--Border{
+  .Menu__Link.Menu__Link--Border {
     font-family: "Koodak";
   }
   .HomeDescription__Title {
@@ -143,14 +150,14 @@ body.fa-language {
   .Service__More:hover {
     font-size: 2rem;
   }
-  .ServiceThings__ProTitle{
+  .ServiceThings__ProTitle {
     font-family: "DastNevis";
   }
-  .DesciptionText{
+  .DesciptionText {
     font-family: "Dirooz";
     direction: rtl;
   }
-  .UndoButton{
+  .UndoButton {
     cursor: pointer;
   }
 }

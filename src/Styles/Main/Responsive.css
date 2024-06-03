@@ -7,6 +7,12 @@
     border-top: none;
     border-left: 1px solid gray;
   }
+  .Coin__Image {
+    width: 5rem;
+  }
+  .Coin__symbol{
+    display: block;
+  }
 }
 @media (min-width: 992px) {
   .Service {

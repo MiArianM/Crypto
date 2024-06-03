@@ -1,0 +1,142 @@
+table {
+  border: 3px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  min-height: 100vh;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 2.5em 0 1.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #e4dfd8;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.Coin {
+  display: block;
+}
+.Coin__Image {
+  width: 4.5rem;
+}
+.Coin__symbol {
+  font-size: 2.4rem;
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+.css-wjh20t-MuiPagination-ul {
+  position: relative;
+  top: 11rem;
+}
+.perRow {
+  position: relative;
+  top: 12rem;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  padding: 1rem;
+  height: 6rem;
+  border-radius: 4rem;
+  border-left: 1px solid black;
+  border-top: 1px solid rgba(255, 255, 255, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition: 1s all;
+}
+.perRow:hover {
+  border-top: 1px solid black;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 1px solid black;
+}
+.perRow__List {
+  border: none;
+  padding-left: 1rem;
+  width: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: black solid 1px;
+  transition: 1s all ease;
+  height: 5rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+.perRow__List:hover {
+  border: 1px solid black;
+  border-bottom: rgba(0, 0, 0, 0) solid 1px;
+  border-radius: 3rem;
+  background-color: antiquewhite;
+}
+.perRow__List:focus {
+  border-radius: 1rem;
+}
+.perRow__List > option {
+  padding: 1rem !important;
+}
+.kINpuu {
+  justify-content: center;
+  align-items: center;
+  width: 50vw !important;
+  margin-left: 25vw;
+  height: 70vh;
+}
