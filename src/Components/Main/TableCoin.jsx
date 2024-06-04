@@ -140,6 +140,9 @@ const TableRow = ({
         <div className="Coin">
           <img className="Coin__Image" src={image} alt={id} />
           <h4 className="Coin__symbol">{symbol}</h4>
+          <div className="HoverCoin">
+            <h5 className="HoverCoin__Text">Click For {id} Chart</h5>
+          </div>
         </div>
       </td>
       <td data-label="Name">{name}</td>
