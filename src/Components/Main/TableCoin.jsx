@@ -57,7 +57,6 @@ function TableCoin({
             <th scope="col">{t("Price")}</th>
             <th scope="col">{t("At 24H")}</th>
             <th scope="col">{t("Total Volume")}</th>
-            <th scope="col">{t("Chart")}</th>
           </tr>
         </thead>
         <tbody>
@@ -125,7 +124,7 @@ const TableRow = ({
   const getCurrencySymbol = (currency) => {
     switch (currency) {
       case "btc":
-        return "";
+        return "₿ ";
       case "usd":
         return "$ ";
       case "eur":
@@ -134,8 +133,10 @@ const TableRow = ({
         return "¥ ";
       case "rub":
         return "₽ ";
+      case "eth":
+        return "Ξ ";
       default:
-        return "";
+        return "$";
     }
   };
 
@@ -143,7 +144,8 @@ const TableRow = ({
   const [ChartType, setChartType] = useState("prices");
   const [ChartDatas, setChartDatas] = useState(null);
   const [loading, setLoading] = useState(false);
-  const handleHoverCoinClick = async () => {
+  const [activeButton, setActiveButton] = useState(ChartType);
+  const fetchChartData = async (type) => {
     setIsModalOpen(true);
     setLoading(true);
     try {
@@ -152,21 +154,24 @@ const TableRow = ({
         throw new Error("Network response was not ok");
       }
       const json = await res.json();
-      setChartDatas(ChartData(json, ChartType));
+      setChartDatas(ChartData(json, type));
     } catch (error) {
       console.error("Error fetching chart data:", error);
     } finally {
       setLoading(false);
     }
   };
-  const HandleChartChanges = (event) => {
-    if (event.target.tagName === "BUTTON") {
-      const TypeOfChart = event.target.innerText
-        .toLowerCase()
-        .replace(" ", "_");
-      setChartType(TypeOfChart);
-    }
+  const handleHoverCoinClick = async () => {
+    setIsModalOpen(true);
+    fetchChartData(ChartType);
   };
+  const HandleChartChanges = (type) => {
+    setChartType(type);
+    setActiveButton(type);
+    fetchChartData(type);
+  };
+  const { t } = useTranslation();
+
   return (
     <>
       <tr>
@@ -186,18 +191,21 @@ const TableRow = ({
             : "Price is Not Defined Yet !"}
         </td>
         <td data-label="At 24H">
-          {price ? price_change.toFixed(2) : "Not Found !"}
+          {price ? (price_change.toFixed(2), price_change) : "Not Found !"}
         </td>
         <td data-label="Total Volume">
           {price ? total_volume.toLocaleString() : "0"}
         </td>
-        <td data-label="Chart">{price_change}</td>
       </tr>
       <ChartModal
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
       >
-        <h2>{name} Chart</h2>
+        <div className="CoinInfo">
+          <img className="CoinInfo__Image" src={image} alt={id} />
+          <h2 className="CoinInfo__Title">{name} Chart</h2>
+        </div>
+
         {loading ? (
           <ThreeDots
             visible={true}
@@ -211,11 +219,37 @@ const TableRow = ({
           />
         ) : (
           <div style={{ width: "100%", height: "60vh" }}>
-            <CoinChart data={{ ChartDatas, ChartType, setChartType }} />
-            <div onClick={HandleChartChanges} className="ChartButtons">
-              <button className="chartButton">Prices</button>
-              <button className="chartButton">Market Caps</button>
-              <button className="chartButton">Total Volumes</button>
+            <CoinChart data={{ ChartDatas, ChartType, price_change }} />
+            <div
+              onClick={(e) => HandleChartChanges(e.target.dataset.type)}
+              className="ChartButtons"
+            >
+              <button
+                data-type="prices"
+                className={`chartButton ${
+                  activeButton === "prices" ? "active" : ""
+                }`}
+              >
+                {t("Prices")}
+              </button>
+              <button
+                data-type="market_caps"
+                className={`chartButton ${
+                  activeButton === "market_caps" ? "active" : ""
+                }`}
+                onClick={() => HandleChartChanges("market_caps")}
+              >
+                {t("Market Caps")}
+              </button>
+              <button
+                data-type="total_volumes"
+                className={`chartButton ${
+                  activeButton === "total_volumes" ? "active" : ""
+                }`}
+                onClick={() => HandleChartChanges("total_volumes")}
+              >
+                {t("Total Volumes")}
+              </button>
             </div>
           </div>
         )}

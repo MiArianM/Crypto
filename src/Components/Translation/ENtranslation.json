@@ -69,5 +69,8 @@
   "Price": "Price",
   "At 24H": "At 24H",
   "Total Volume": "Total Volume",
-  "Chart": "Chart"
+  "Chart": "Chart",
+  "Market Caps": "Market Caps",
+  "Total Volumes": "Total Volumes",
+  "close": "close"
 }

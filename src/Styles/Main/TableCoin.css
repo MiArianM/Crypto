@@ -45,6 +45,9 @@ table th {
   display: none;
   font-family: "Poetsen";
 }
+td[data-label="At 24H"] {
+  direction: ltr;
+}
 @media screen and (max-width: 600px) {
   table {
     border: 0;
@@ -177,7 +180,7 @@ table th {
   width: 85%;
   border: 1px rgb(202, 196, 196) solid;
   padding: 2rem;
-  height: 100%;
+  height: 3rem;
   font-family: "PoppinsText";
 }
 .CryptoSearch__List {
@@ -240,16 +243,75 @@ table th {
 .HoverCoin__Text {
   font-family: "Poetsen";
 }
-.gmCHgy{
+.gmCHgy {
   position: unset !important;
   flex-grow: 1 !important;
   width: 70% !important;
   margin-left: 15% !important;
   margin-top: 10% !important;
   height: 50% !important;
-
 }
-.kALFAT{
+.kALFAT {
   display: block !important;
 }
+.ChartButtons {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.chartButton {
+  border: 2px solid tomato;
+  background: none;
+  color: tomato;
+  cursor: pointer;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-family: "PoppinsMedium";
+}
+.chartButton:hover {
+  color: white;
+}
+.chartButton:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: tomato;
+  z-index: -1;
+  border-radius: 50% 50% 0% 0%;
+  height: 0%;
+  transition: all 0.5s;
+}
 
+.chartButton:hover:before {
+  height: 190%;
+}
+.CoinInfo {
+  display: flex;
+  align-items: center;
+  height: 5vh;
+  gap: 1rem;
+}
+.CoinInfo__Title {
+  font-family: "Poetsen";
+}
+.recharts-legend-item-text {
+  font-family: "PoppinsText";
+  text-transform: capitalize;
+}
+.CoinInfo__Image {
+  width: 20px;
+}
+.chartButton.active {
+  background-color: tomato;
+  color: white;
+}
+.sc-bmzXxz{
+  font-family: "Volkhov";
+}

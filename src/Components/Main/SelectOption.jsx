@@ -49,7 +49,6 @@ const SelectOption = ({ setCurrencies }) => {
     },
   ];
   const handleOptionClick = (option) => {
-    console.log(option);
     setSelectedOption(option);
     setCurrencies(option.value);
     setIsOpen(false);

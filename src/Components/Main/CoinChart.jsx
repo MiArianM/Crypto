@@ -10,16 +10,47 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
-const CoinChart = ({ data: { ChartDatas, ChartType } }) => {
+const scaleValue = (value, type) => {
+  if (type === "prices") {
+    return value;
+  }
+  return value / 1e9;
+};
+
+const formatTooltipValue = (value, name) => {
+  if (name === "prices") {
+    return (value * 1e9).toLocaleString();
+  }
+  return value.toFixed(2) + "B";
+};
+const formatYAxisValue = (value, type) => {
+  if (type === "prices") {
+    return value * 1e9;
+  }
+  return value.toFixed(2) + "B";
+};
+const CoinChart = ({ data: { ChartDatas, ChartType, price_change } = {} }) => {
+  const scaledData = ChartDatas.map((item) => ({
+    Date: item.Date,
+    [ChartType]: scaleValue(item[ChartType]),
+  }));
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart width={600} height={200} data={ChartDatas}>
+      <LineChart width={600} height={200} data={scaledData}>
         <CartesianGrid strokeDasharray="3 2" stroke="#BC66DB" />
         <XAxis dataKey="Date" />
-        <YAxis datakey={ChartType} domain={["auto", "auto"]} />
-        <Line type="monotone" dataKey={ChartType} stroke="#DC6868" />
+        <YAxis
+          datakey={ChartType}
+          domain={["auto", "auto"]}
+          tickFormatter={(value) => formatYAxisValue(value, ChartType)}
+        />
+        <Line
+          type="monotone"
+          dataKey={ChartType}
+          stroke={price_change >= 0 ? "#15DB15" : "#DB1527"}
+        />
         <Legend />
-        <Tooltip />
+        <Tooltip formatter={formatTooltipValue} />
       </LineChart>
     </ResponsiveContainer>
   );
@@ -27,8 +58,8 @@ const CoinChart = ({ data: { ChartDatas, ChartType } }) => {
 CoinChart.propTypes = {
   data: PropTypes.shape({
     ChartDatas: PropTypes.array,
-    ChartType: PropTypes.string.isRequired,
-    setChartType: PropTypes.func.isRequired,
-  }).isRequired,
+    ChartType: PropTypes.string,
+    setChartType: PropTypes.func,
+  }),
 };
 export default CoinChart;

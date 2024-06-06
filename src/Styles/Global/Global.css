@@ -195,6 +195,12 @@ body.fa-language {
   .css-wjh20t-MuiPagination-ul {
     left: -2.75rem;
   }
+  .chartButton{
+    font-family: "Dirooz";
+  }
+  .sc-bmzXxz{
+    font-family: "DastNevis";
+  }
 }
 a {
   text-decoration: none;

@@ -1,6 +1,7 @@
 import ReactModal from "react-modal";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 ReactModal.setAppElement("#root");
 
@@ -11,15 +12,16 @@ const StyledModal = styled(ReactModal)`
   right: auto;
   bottom: auto;
   margin-right: -50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-42%, -50%);
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
   width: 80%;
   height: 80%;
   text-align: center;
-  max-width: 800px;
+  max-width: 1800px;
+  font-size: 12px;
   flex-direction: column;
 `;
 
@@ -41,6 +43,8 @@ const CloseButton = styled.button`
 `;
 
 const ChartModal = ({ isOpen, onRequestClose, children }) => {
+  const { t } = useTranslation();
+
   return (
     <StyledModal
       isOpen={isOpen}
@@ -48,13 +52,13 @@ const ChartModal = ({ isOpen, onRequestClose, children }) => {
       contentLabel="Example Modal"
     >
       {children}
-      <CloseButton onClick={onRequestClose}>Close</CloseButton>
+      <CloseButton onClick={onRequestClose}>{t("close")}</CloseButton>
     </StyledModal>
   );
 };
 ChartModal.propTypes = {
   isOpen: PropTypes.bool,
   onRequestClose: PropTypes.func,
-  children: PropTypes.children,
+  children: PropTypes.any,
 };
 export default ChartModal;
