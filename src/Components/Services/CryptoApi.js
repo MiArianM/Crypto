@@ -9,4 +9,7 @@ const AllCryptos = () => {
 const SearchedCryptos = (Searched) => {
   return `${BASE_URL}/search?query=${Searched}&locale=en&${API_TOKEN}`;
 };
-export { CryptoData, AllCryptos ,SearchedCryptos};
+const CoinChartAddress = (id, Currency, Day) => {
+  return `${BASE_URL}/coins/${id}/market_chart?vs_currency=${Currency}&days=${Day}&${API_TOKEN}`;
+};
+export { CryptoData, AllCryptos, SearchedCryptos, CoinChartAddress };

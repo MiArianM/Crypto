@@ -240,3 +240,16 @@ table th {
 .HoverCoin__Text {
   font-family: "Poetsen";
 }
+.gmCHgy{
+  position: unset !important;
+  flex-grow: 1 !important;
+  width: 70% !important;
+  margin-left: 15% !important;
+  margin-top: 10% !important;
+  height: 50% !important;
+
+}
+.kALFAT{
+  display: block !important;
+}
+
