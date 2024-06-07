@@ -35,7 +35,7 @@ function WebFooter() {
         <Element name="Company">
           <section className="AboutMe">
             <img
-              src="./src/Assest/Images/Me.png"
+              src="./public/Images/Me.png"
               alt=""
               className="AboutMe__Image"
             />

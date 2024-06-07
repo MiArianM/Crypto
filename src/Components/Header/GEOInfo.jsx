@@ -10,7 +10,7 @@ const GeoInfo = () => {
       </span>
     </div>
   ) : (
-    <img className="Nationality" src="./src/Assest/Images/MahFlag.png" />
+    <img className="Nationality" src="./public/Images/MahFlag.png" />
   );
 };
 

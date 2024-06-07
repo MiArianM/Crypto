@@ -59,7 +59,7 @@ const HomeDescription = () => {
         <div className="HomeDescription__Video" onClick={openModal}>
           <img
             className="HomeDescriptionVideo__Play"
-            src="./src/Assest/Images/PlayButton.svg"
+            src="./public/Images/PlayButton.svg"
             alt="Play Button"
           />
           <span className="HomeDescription__Playtitle">{t("Play Demo")}</span>

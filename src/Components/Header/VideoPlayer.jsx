@@ -194,7 +194,7 @@ const VideoPlayer = () => {
         <video
           id="video"
           ref={videoRef}
-          src="./src/Assest/Videos/Crypto.mp4"
+          src="./public/Videos/Crypto.mp4"
           autoPlay
           playsInline
           loop

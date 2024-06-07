@@ -82,7 +82,7 @@ const Header = () => {
         } else {
           dispatch({
             type: "SET_FLAG_URL",
-            payload: "./src/Assest/Images/MahFlag.png",
+            payload: "./public/Images/MahFlag.png",
           });
         }
         Loaddispatch("Task3");
