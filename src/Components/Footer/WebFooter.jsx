@@ -3,7 +3,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { slides } from "./slides";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-
+import { Element } from "react-scroll";
 function WebFooter() {
   const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,81 +32,95 @@ function WebFooter() {
   return (
     <footer>
       <div className="container">
-        <section className="AboutMe">
-          <img
-            src="./src/Assest/Images/Me.png"
-            alt=""
-            className="AboutMe__Image"
-          />
-          <div className="slider-container">
-            <TransitionGroup className="slider">
-              <CSSTransition
-                key={currentIndex}
-                timeout={500}
-                classNames="slide"
-              >
-                <div className="slide">
-                  <h2 className="slide-title">
-                    {t(slides[currentIndex].title)}
-                  </h2>
-                  <p className="slide-description">
-                    {t(slides[currentIndex].description)}
-                  </p>
-                </div>
-              </CSSTransition>
-            </TransitionGroup>
-            <div className="slider-buttons">
-              <button onClick={prevSlide} className="slider-button">
-                {t("Back")}
-              </button>
-              <button onClick={nextSlide} className="slider-button">
-                {t("Next")}
-              </button>
+        <Element name="Company">
+          <section className="AboutMe">
+            <img
+              src="./src/Assest/Images/Me.png"
+              alt=""
+              className="AboutMe__Image"
+            />
+            <div className="slider-container">
+              <TransitionGroup className="slider">
+                <CSSTransition
+                  key={currentIndex}
+                  timeout={500}
+                  classNames="slide"
+                >
+                  <div className="slide">
+                    <h2 className="slide-title">
+                      {t(slides[currentIndex].title)}
+                    </h2>
+                    <p className="slide-description">
+                      {t(slides[currentIndex].description)}
+                    </p>
+                  </div>
+                </CSSTransition>
+              </TransitionGroup>
+              <div className="slider-buttons">
+                <button onClick={prevSlide} className="slider-button">
+                  {t("Back")}
+                </button>
+                <button onClick={nextSlide} className="slider-button">
+                  {t("Next")}
+                </button>
+              </div>
+              <div className="slider-dots">
+                {slides.map((_, index) => (
+                  <span
+                    key={index}
+                    className={`slider-dot ${
+                      index === currentIndex ? "active" : ""
+                    }`}
+                    onClick={() => goToSlide(index)}
+                  ></span>
+                ))}
+              </div>
+              <div className="slider-pause">
+                <button onClick={togglePause} className="pause-button">
+                  <div className="icon-wrapper">
+                    <CSSTransition
+                      in={!isPaused}
+                      timeout={500}
+                      classNames="icon"
+                    >
+                      <FaPause key="pause" />
+                    </CSSTransition>
+                    <CSSTransition
+                      in={isPaused}
+                      timeout={500}
+                      classNames="icon"
+                    >
+                      <FaPlay key="play" />
+                    </CSSTransition>
+                  </div>
+                </button>
+              </div>
             </div>
-            <div className="slider-dots">
-              {slides.map((_, index) => (
-                <span
-                  key={index}
-                  className={`slider-dot ${
-                    index === currentIndex ? "active" : ""
-                  }`}
-                  onClick={() => goToSlide(index)}
-                ></span>
-              ))}
-            </div>
-            <div className="slider-pause">
-              <button onClick={togglePause} className="pause-button">
-                <div className="icon-wrapper">
-                  <CSSTransition in={!isPaused} timeout={500} classNames="icon">
-                    <FaPause key="pause" />
-                  </CSSTransition>
-                  <CSSTransition in={isPaused} timeout={500} classNames="icon">
-                    <FaPlay key="play" />
-                  </CSSTransition>
-                </div>
-              </button>
-            </div>
-          </div>
-        </section>
+          </section>
+        </Element>
       </div>
+
       <section className="FooterBar">
         <div className="FooterContainer">
           <div className="pt-20 sm:pt-30 pb-8 mt-20 border-secondary-dark">
             <hr className="hr-main" />
             <div className="mt-2 flex-center">
               <div className="my-4 grid-main">
-                <div>
-                  <h2 className="font-header">{t("I am")}</h2>
-                  <ul className="font-medium tracking-tight text-slate-200">
-                    <span className="my-2 font-medium tracking-tight text-xl link">
-                      {t("Arian Pourhossein")}
-                    </span>
-                    <br />
-                    <span className="my-2 font-medium tracking-tight text-xl link">
-                      {t("22 Y/O | he/him")}
-                    </span>
-                  </ul>
-                </div>
+                <Element name="About">
+                  <div>
+                    <h2 className="font-header">{t("I am")}</h2>
+                    <ul className="font-medium tracking-tight text-slate-200">
+                      <span className="my-2 font-medium tracking-tight text-xl link">
+                        {t("Arian Pourhossein")}
+                      </span>
+
+                      <br />
+                      <span className="my-2 font-medium tracking-tight text-xl link">
+                        {t("22 Y/O | he/him")}
+                      </span>
+                    </ul>
+                  </div>
+                </Element>
 
                 <div>
                   <h2 className="font-header">{t("Contact Me")}</h2>

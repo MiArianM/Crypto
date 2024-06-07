@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Element } from "react-scroll";
+import { CryptoData, AllCryptos } from "../Services/CryptoApi";
 import Services from "../Services.json";
 import ServiceModal from "./ServiceModal";
-import { useTranslation } from "react-i18next";
 import TableCoin from "./TableCoin";
-import { CryptoData, AllCryptos } from "../Services/CryptoApi";
 function WebMain() {
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,11 +43,13 @@ function WebMain() {
         <section className="Services">
           {Services.map((service, index) => (
             <div key={index} className="Service">
-              <img
-                className="Service__Image"
-                src={service.img}
-                alt={service.alt}
-              />
+              <Element name="Products">
+                <img
+                  className="Service__Image"
+                  src={service.img}
+                  alt={service.alt}
+                />
+              </Element>
               <div className="Service__Infos">
                 <h2 className="Service__Title">{t(service.Title)}</h2>
                 <p className="Service__Description">{t(service.Description)}</p>
@@ -72,16 +75,18 @@ function WebMain() {
           }}
         />
       )}
-      <TableCoin
-        isLoading={isLoading}
-        DataOfCryptos={DataOfCryptos}
-        page={page}
-        setPage={setPage}
-        Currencies={Currencies}
-        setCurrencies={setCurrencies}
-        Cryptos={Cryptos}
-        setSelectValue={setSelectValue}
-      />
+      <Element name="Prices">
+        <TableCoin
+          isLoading={isLoading}
+          DataOfCryptos={DataOfCryptos}
+          page={page}
+          setPage={setPage}
+          Currencies={Currencies}
+          setCurrencies={setCurrencies}
+          Cryptos={Cryptos}
+          setSelectValue={setSelectValue}
+        />
+      </Element>
     </main>
   );
 }

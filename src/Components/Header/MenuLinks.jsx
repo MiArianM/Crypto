@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import IranCities from "../GetIP/IranCities.json";
 import { AppContext } from "./Context";
 import { useContext, useState, useEffect } from "react";
-
+import { Link } from "react-scroll";
 const MenuLinks = ({ isMobile }) => {
   const { t } = useTranslation();
   const { state, dispatch } = useContext(AppContext);
@@ -30,11 +30,11 @@ const MenuLinks = ({ isMobile }) => {
   };
 
   const links = [
-    { text: t("Home"), href: "" },
-    { text: t("Products"), href: "" },
-    { text: t("Prices"), href: "" },
-    { text: t("Company"), href: "" },
-    { text: t("Learn"), href: "" },
+    { text: t("Home"), href: "Home" },
+    { text: t("Products"), href: "Products" },
+    { text: t("Prices"), href: "Prices" },
+    { text: t("Company"), href: "Company" },
+    { text: t("About"), href: "About" },
   ];
 
   return (
@@ -45,14 +45,16 @@ const MenuLinks = ({ isMobile }) => {
             className={isMobile ? "MobileMenu__item" : "DesktopMenu__item"}
             key={index}
           >
-            <a
-              onMouseEnter={HoverMenuItem}
-              onMouseLeave={UnHoverMenuItem}
-              href={link.href}
-              className="menuitem__link"
-            >
-              {link.text}
-            </a>
+            <Link to={link.href} smooth={true} duration={1500}>
+              <a
+                onMouseEnter={HoverMenuItem}
+                onMouseLeave={UnHoverMenuItem}
+                href={link.href}
+                className="menuitem__link"
+              >
+                {link.text}
+              </a>
+            </Link>
           </li>
         ))}
       </ul>

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { TypeAnimation } from "react-type-animation";
 import { AppContext } from "./Context";
+import { Element } from "react-scroll";
 import SequenceEN from "../SequanceTranslation/SequenceEN.json";
 import SequenceFA from "../SequanceTranslation/SequenceFA.json";
 import SequenceDE from "../SequanceTranslation/SequenceDE.json";
@@ -38,13 +39,15 @@ const HomeDescription = () => {
       <p className="HomeDescription__Description">
         {t("Your crypto journey starts here !")}
       </p>
-      <TypeAnimation
-        key={state.language}
-        className="TypingStories1"
-        sequence={getSequence()}
-        speed={45}
-        repeat={Infinity}
-      />
+      <Element name="Home">
+        <TypeAnimation
+          key={state.language}
+          className="TypingStories1"
+          sequence={getSequence()}
+          speed={45}
+          repeat={Infinity}
+        />
+      </Element>
       <div className="LinkANDVideo">
         <a
           className="HomeDescription__Link"
