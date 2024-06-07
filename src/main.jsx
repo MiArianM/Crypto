@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+
 const consoleError = console.error;
 console.error = (message, ...args) => {
   if (message.includes("Support for defaultProps will be removed")) {
@@ -8,4 +9,6 @@ console.error = (message, ...args) => {
   consoleError(message, ...args);
 };
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <App />
+);

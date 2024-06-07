@@ -1,4 +1,4 @@
-import WebFooter from "./Components/WebFooter";
+import WebFooter from "./Components/Footer/WebFooter";
 import WebMain from "./Components/Main/WebMain";
 import FinalHeader from "./Components/Header/FinalHeader";
 import { I18nextProvider } from "react-i18next";

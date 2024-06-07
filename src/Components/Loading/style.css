@@ -1,20 +1,20 @@
 .animation-container {
   display: block;
-  position: absolute;
+  position: fixed;
   width: 2000px;
   max-width: 100%;
   margin: 0 auto;
   z-index: 2;
   background: #ccccb2;
-  background: -webkit-linear-gradient(to right, #7a1616, #ccccb2);
-  background: linear-gradient(to right, #943b12, #ccccb2);
+  background: -webkit-linear-gradient(to right, #8a7f6b, #ccccb2);
+  background: linear-gradient(to right, #8a7f6b, #ccccb2);
   height: 100vh;
   .lightning-container {
     position: absolute;
     top: 50%;
     left: 0;
     display: flex;
-    transform: translateY(-50%);
+    transform: translateY(-30%);
     .lightning {
       position: absolute;
       display: block;

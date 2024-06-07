@@ -34,7 +34,7 @@ const Header = () => {
       loadingDispatch({ type: "START_LOADING", task: "Task1" });
       try {
         const response = await axios.get("https://api.ipify.org?format=json");
-        dispatch({ type: "SET_IP", payload: response.data.ip });
+        dispatch({ type: "SET_IP", payload: response });
         dispatch({ type: "SET_LANGUAGE", payload: "EN" });
         Loaddispatch("Task1");
       } catch (error) {
@@ -52,7 +52,7 @@ const Header = () => {
       try {
         if (state.ip) {
           const response = await axios.get(
-            `https://ipinfo.io/${state.ip}/geo?token=9546848929e71a`
+            `https://ipinfo.io/${state.ip.data.ip}/geo?token=9546848929e71a`
           );
           dispatch({ type: "SET_LOCATION", payload: response.data });
           Loaddispatch("Task2");
@@ -74,12 +74,9 @@ const Header = () => {
         : state.manualCountry;
       try {
         if (countryCode && !isFarsi(countryCode)) {
-          const response = await axios.get(
-            `https://restcountries.com/v3.1/alpha/${countryCode}`
-          );
           dispatch({
             type: "SET_FLAG_URL",
-            payload: response.data[0].flags.svg,
+            payload: `https://flagsapi.com/${countryCode}/flat/64.png`,
           });
           console.log("Country Detected !");
         } else {

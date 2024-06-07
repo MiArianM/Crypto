@@ -195,11 +195,30 @@ body.fa-language {
   .css-wjh20t-MuiPagination-ul {
     left: -2.75rem;
   }
-  .chartButton{
+  .chartButton {
     font-family: "Dirooz";
   }
-  .sc-bmzXxz{
+  .sc-bmzXxz {
     font-family: "DastNevis";
+  }
+  .slide-title {
+    font-family: "DastNevis";
+  }
+  .slide-description {
+    font-family: "Dirooz";
+  }
+  .slider-button {
+    font-family: "Koodak";
+  }
+  .AboutMe__Image {
+    transform: rotateY(0deg);
+  }
+  .font-header{
+    font-family: "DastNevis";
+    font-size: 3rem;
+  }
+  .font-medium{
+    font-family: "Dirooz";
   }
 }
 a {
