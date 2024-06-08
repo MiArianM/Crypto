@@ -8,7 +8,7 @@ header {
       var(--backgroundImageEffect),
       var(--backgroundHomeEffect)
     ),
-    url("../../Assest/ReaPics/CryptoPerson.png");
+    url("../../../public/ReaPics/CryptoPerson.png");
   background-position: center;
   background-size: cover;
   min-height: var(--headerHeight);
@@ -351,7 +351,7 @@ header {
   width: 37rem;
   height: 1.5rem !important;
   display: block;
-  background: url("../../Assest/Images/BackOfText.png");
+  background: url("../../../public/Images/BackOfText.png");
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;

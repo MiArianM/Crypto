@@ -76,7 +76,7 @@
   }
   header {
     background: linear-gradient(rgba(59, 55, 53, 0.6), #bd542380),
-      url("../../Assest/ReaPics/TradeGuy.jpg");
+      url("../../../public/ReaPics/TradeGuy.jpg");
     background-position: center;
     background-size: cover;
   }

@@ -26,7 +26,7 @@
       var(--backgroundImageEffect),
       var(--backgroundHomeEffect)
     ),
-    url(../../Assest/Images/BrushBackground.png) center;
+    url(../../../public/Images/BrushBackground.png) center;
   background-size: cover;
   width: 85%;
   min-height: 50rem;
